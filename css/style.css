@@ -123,18 +123,117 @@ body {
     display: none;
 }
 
-@media (max-width:991px){
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 5px;
+    }
 
-    .container{
-        grid-template-columns: 1.5fr 1fr;
-        padding: 10px;
+    .heading {
+        font-size: 25px;
+    }
+
+    .search-bar {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .container .main-video iframe{
+        width: 680px;
+        height: 385px;
+        border-radius: 10px;
+        border-color: #009dff;
+    }
+
+    .container .video-list {
+        height: 600px;
+        width: 700px;
+    }
+
+    .container .main-video .title {
+        font-size: 16px;
+    }
+
+    .container .video-list .vid .title {
+        font-size: 12px;
+    }
+
+    .container .video-list .vid .logo {
+        width: 100px;
+        height: 60px;
     }
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+    .heading {
+        font-size: 25px;
+    }
 
-    .container{
-        grid-template-columns: 1fr;
-        padding: 10px;
+    .search-bar {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .container .main-video iframe{
+        width: 680px;
+        height: 385px;
+        border-radius: 10px;
+        border-color: #009dff;
+    }
+
+    .container .video-list {
+        height: 600px;
+        width: 700px;
+    }
+
+    .container .main-video .title {
+        font-size: 16px;
+    }
+
+    .container .video-list .vid .title {
+        font-size: 12px;
+    }
+
+    .container .video-list .vid .logo {
+        width: 100px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .heading {
+        font-size: 25px;
+    }
+
+    .search-bar {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .container .main-video iframe{
+        width: 680px;
+        height: 385px;
+        border-radius: 10px;
+        border-color: #009dff;
+    }
+
+    .container .video-list {
+        height: 600px;
+        width: 700px;
+    }
+
+    .container .main-video .title {
+        font-size: 16px;
+    }
+
+    .container .video-list .vid .title {
+        font-size: 12px;
+    }
+
+    .container .video-list .vid .logo {
+        width: 100px;
+        height: 60px;
     }
 }
