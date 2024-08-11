@@ -1,4 +1,4 @@
-(function() {
+/*(function() {
     // Patrones de URL que indican que el contenido es un anuncio
     const adPatterns = [
         /join.worldoftanks.com/,
@@ -33,7 +33,9 @@
         /www.voegol.com.br/,
         /promo.codere.bet.ar/,
         /online.codere.bet.ar/,
-        /gml-grp.com/
+        /gml-grp.com/,
+        /ak.phaunaitsi.net/,
+        /ak.phaunaitsi.net/
     ];
 
     // Función para eliminar anuncios
@@ -67,4 +69,31 @@
         removeAds();
         setInterval(removeAds, 5000); // Verificar y eliminar anuncios cada 5 segundos
     });
+})();
+*/
+(function() {
+    // Redefinir window.open para bloquear pop-ups
+    const originalWindowOpen = window.open;
+    
+    window.open = function(url, name, specs) {
+        console.log('Pop-up blocked:', url);
+        return null;
+    };
+
+    // Opcional: Puedes restaurar window.open si lo necesitas en algún momento
+    function restoreWindowOpen() {
+        window.open = originalWindowOpen;
+    }
+
+    // Si hay scripts que intentan abrir ventanas pop-up repetidamente, puedes bloquear las alertas también
+    window.alert = function(message) {
+        console.log('Blocked alert:', message);
+    };
+
+    // Para prevenir técnicas de apertura indirecta de pop-ups, también puedes bloquear las modificaciones de window.open
+    Object.defineProperty(window, 'open', {
+        configurable: false,
+        writable: false
+    });
+
 })();
