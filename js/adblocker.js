@@ -71,29 +71,53 @@
     });
 })();
 */
-(function() {
-    // Redefinir window.open para bloquear pop-ups
-    const originalWindowOpen = window.open;
-    
-    window.open = function(url, name, specs) {
-        console.log('Pop-up blocked:', url);
-        return null;
-    };
+  // Bloqueo de ventanas emergentes
+  window.open = function() {
+    console.log("Intento de abrir una ventana emergente bloqueada.");
+    return null;
+};
 
-    // Opcional: Puedes restaurar window.open si lo necesitas en algún momento
-    function restoreWindowOpen() {
-        window.open = originalWindowOpen;
-    }
+// Bloqueo de redireccionamientos automáticos
+window.onbeforeunload = function() {
+    return "¿Estás seguro de que quieres salir de esta página?";
+};
 
-    // Si hay scripts que intentan abrir ventanas pop-up repetidamente, puedes bloquear las alertas también
-    window.alert = function(message) {
-        console.log('Blocked alert:', message);
-    };
+// Bloqueo de anuncios y elementos de seguimiento
+const adSelectors = [
+    'iframe[src*="ads"]',
+    'iframe[src*="advertising"]',
+    'iframe[src*="adservice"]',
+    'iframe[src*="doubleclick"]',
+    'iframe[src*="googlesyndication"]',
+    'iframe[src*="popads"]',
+    'iframe[src*="ad"]'
+];
 
-    // Para prevenir técnicas de apertura indirecta de pop-ups, también puedes bloquear las modificaciones de window.open
-    Object.defineProperty(window, 'open', {
-        configurable: false,
-        writable: false
+function removeAds() {
+    adSelectors.forEach(selector => {
+        const ads = document.querySelectorAll(selector);
+        ads.forEach(ad => ad.remove());
     });
+}
 
-})();
+// Observa cambios en la página para eliminar anuncios dinámicos
+const observer = new MutationObserver(removeAds);
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Ejecutar al cargar la página
+window.onload = function() {
+    removeAds();
+};
+
+// Evitar que los enlaces causen redirecciones no deseadas
+document.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A' && event.target.href.includes('ad')) {
+        event.preventDefault();
+        console.log("Intento de redireccionamiento bloqueado:", event.target.href);
+    }
+});
+
+// Evitar el uso de contextmenu para prevenir métodos no deseados
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
