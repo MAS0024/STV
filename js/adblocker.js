@@ -30,7 +30,10 @@
         /legalsofafalter.com/,
         /inolorak.co.in/,
         /getramusinc.azurewebsites.net/,
-        /www.voegol.com.br/
+        /www.voegol.com.br/,
+        /promo.codere.bet.ar/,
+        /online.codere.bet.ar/,
+        /gml-grp.com/
     ];
 
     // Función para eliminar anuncios
