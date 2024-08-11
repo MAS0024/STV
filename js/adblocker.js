@@ -13,7 +13,9 @@
         /lps.iluvestreaming.com/,
         /stake.com/,
         /betano.bet.ar/,
+        /www.betano.bet.ar/,
         /ofertas.pba.betsson.bet.ar/,
+        /pba.betsson.bet.ar/,
         /go.aff.apuestashouse.com/,
         /tullosllc.com/,
         /refpa4293501.top/,
@@ -21,12 +23,14 @@
         /mikedownload.net/,
         /downloadoperagx.net/,
         /promo.worldofwarships.com/,
+        /promo.codere.bet.ar/,
         /mikedownload.net/,
         /stake.mba/,
         /roobet.com/,
         /legalsofafalter.com/,
         /inolorak.co.in/,
-        /getramusinc.azurewebsites.net/
+        /getramusinc.azurewebsites.net/,
+        /www.voegol.com.br/
     ];
 
     // Función para eliminar anuncios
