@@ -15,38 +15,37 @@
     <div class="container">
         <div class="main-video">
             <div class="video">
-
-                <iframe src="https://rk2.nebunexa.com/cvatt.html?get=Q2FuYWw3&lang=1" 
+                <iframe id="mainPlayer" src="" 
                 allow="autoplay; encrypted-media" 
                 allowfullscreen></iframe>    
-
-                <h3 class="title">01. TV Publica</h3>
-            </div> 
+                <h3 class="title">Selecciona un canal</h3>
+            </div>
+            <div class="alternative-sources">
+                <label for="sourceSelect">Selecciona una fuente alternativa:</label>
+                <select id="sourceSelect">
+                </select>
+                <button id="changeSourceBtn">Cambiar Fuente</button>
+            </div>
         </div>
 
         <div class="video-list">
-            <div class="vid active" data-title="TV Publica" data-src="https://rk2.nebunexa.com/cvatt.html?get=Q2FuYWw3&lang=1">
-
+            <div class="vid" data-title="TV Publica" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=Q2FuYWw3&lang=1", "https://streamtp.live/global1.php?stream=tv_publica", "https://example.com/alternative2"]'>
                 <img src="img/TVP.png" alt="TV Publica" class="logo">
-
                 <h3 class="title">01. TV Publica</h3>
             </div>
 
-            <div class="vid active" data-title="America TV" data-src="https://rk2.nebunexa.com/cvatt.html?get=QW1lcmljYVRW&lang=1">
-
+            <div class="vid" data-title="America TV" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=QW1lcmljYVRW&lang=1"]'>
                 <img src="img/AmericaTV.png" alt="America TV" class="logo">
-
                 <h3 class="title">02. América TV</h3>
             </div>
-
-            <div class="vid" data-title="El Nueve" data-src="https://rk2.nebunexa.com/cvatt.html?get=Q2FuYWw5&lang=1">
+            <div class="vid" data-title="El Nueve" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=Q2FuYWw5&lang=1"]'>
                 
                 <img src="img/ElNueve.png" alt="El Nueve" class="logo">
 
                 <h3 class="title">03. El Nueve</h3> 
             </div>
 
-            <div class="vid" data-title="Telefe" data-src="https://rk2.nebunexa.com/cvatt.html?get=VGVsZWZlSEQ=&lang=1">
+            <div class="vid" data-title="Telefe" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=VGVsZWZlSEQ=&lang=1"]'>
                 
                 <img src="img/telefe.png" alt="Telefe" class="logo">
 
@@ -54,35 +53,35 @@
                 <h3 class="title">04. Telefe</h3> 
             </div>
 
-            <div class="vid" data-title="El Trece" data-src="https://televisionlibretv.online/html/hls.html?get=aHR0cHM6Ly9saXZlLTAxLTAyLWVsdHJlY2Uudm9kZ2MubmV0L2VsdHJlY2V0di9pbmRleC5tM3U4 ">
+            <div class="vid" data-title="El Trece" data-sources='["https://televisionlibretv.online/html/hls.html?get=aHR0cHM6Ly9saXZlLTAxLTAyLWVsdHJlY2Uudm9kZ2MubmV0L2VsdHJlY2V0di9pbmRleC5tM3U4 "]'>
                 
                 <img src="img/Trece.svg" alt="El Trece" class="logo">
 
                 <h3 class="title">05. El Trece</h3> 
             </div>
 
-            <div class="vid" data-title="CronicaTV" data-src="https://rk2.nebunexa.com/cvatt.html?get=Q3JvbmljYVRW&lang=1">
+            <div class="vid" data-title="CronicaTV" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=Q3JvbmljYVRW&lang=1"]'>
                 
                 <img src="img/Cronica.png" alt="CronicaTV" class="logo">
 
                 <h3 class="title">06. Cronica TV</h3> 
             </div>
 
-            <div class="vid" data-title="C5N" data-src="https://rk2.nebunexa.com/cvatt.html?get=QzVO&lang=1">
+            <div class="vid" data-title="C5N" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=QzVO&lang=1"]'>
                 
                 <img src="img/C5N.png" alt="C5N" class="logo">
 
                 <h3 class="title">07. C5N</h3> 
             </div>
 
-            <div class="vid" data-title="TN" data-src="https://rk2.nebunexa.com/cvatt.html?get=VG9kb05vdGljaWFz&lang=1">
+            <div class="vid" data-title="TN" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=VG9kb05vdGljaWFz&lang=1"]'>
                 
                 <img src="img/TN.svg" alt="TN" class="logo">
 
                 <h3 class="title">08. TN</h3> 
             </div>
 
-            <div class="vid" data-title="26" data-src="https://rk2.nebunexa.com/cvatt.html?get=MjZfVFZfSEQ&lang=1">
+            <div class="vid" data-title="26" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=MjZfVFZfSEQ&lang=1"]'>
                 
                 <img src="img/C26.svg" alt="26" class="logo">
 
@@ -90,63 +89,63 @@
             </div>
             
 
-            <div class="vid" data-title="MTV 00s" data-src="https://rk2.nebunexa.com/cvatt.html?get=TVRWMDA=&lang=1">
+            <div class="vid" data-title="MTV 00s" data-sources='["https://rk2.nebunexa.com/cvatt.html?get=TVRWMDA=&lang=1"]'>
                 
                 <img src="img/MTV00s.webp" alt="MTV 00s" class="logo">
 
                 <h3 class="title">10. MTV 00s</h3> 
             </div>
 
-            <div class="vid" data-title="TNT" data-src="https://rk2.nebunexa.com/cvatt.html?get=VE5UX0hEX0FyZw==&lang=1">
+            <div class="vid" data-title="TNT" data-src='["https://rk2.nebunexa.com/cvatt.html?get=VE5UX0hEX0FyZw==&lang=1"]'>
                 
                 <img src="img/TNT.png" alt="TNT" class="logo">
 
                 <h3 class="title">11. TNT</h3> 
             </div>
             
-            <div class="vid" data-title="DeporTV" data-src="https://rk2.nebunexa.com/cvatt.html?get=RGVwb3JUVkhE&lang=1">
+            <div class="vid" data-title="DeporTV" data-src='["https://rk2.nebunexa.com/cvatt.html?get=RGVwb3JUVkhE&lang=1"]'>
                 
                 <img src="img/DeporTV.png" alt="DeporTV" class="logo">
 
                 <h3 class="title">12. DeporTV</h3> 
             </div>
 
-            <div class="vid" data-title="ESPN" data-src="https://rk2.nebunexa.com/cvatt.html?get=RVNQTjJIRA&lang=1">
+            <div class="vid" data-title="ESPN" data-src='["https://rk2.nebunexa.com/cvatt.html?get=RVNQTjJIRA&lang=1"]'>
                 
                 <img src="img/ESPN.png" alt="ESPN" class="logo">
 
                 <h3 class="title">13. ESPN</h3> 
             </div>
 
-            <div class="vid" data-title="ESPN2" data-src="https://rk2.nebunexa.com/cvatt.html?get=RVNQTjJfQXJn&lang=1">
+            <div class="vid" data-title="ESPN2" data-src='["https://rk2.nebunexa.com/cvatt.html?get=RVNQTjJfQXJn&lang=1"]'>
                 
                 <img src="img/ESPN2.png" alt="ESPN2" class="logo">
 
                 <h3 class="title">14. ESPN2</h3> 
             </div>
             
-            <div class="vid" data-title="ESPN3" data-src="https://rk2.nebunexa.com/cvatt.html?get=RVNQTjM&lang=1">
+            <div class="vid" data-title="ESPN3" data-src='["https://rk2.nebunexa.com/cvatt.html?get=RVNQTjM&lang=1"]'>
                 
                 <img src="img/ESPN3.png" alt="ESPN3" class="logo">
 
                 <h3 class="title">15. ESPN3</h3> 
             </div>
             
-            <div class="vid" data-title="Fox Sports 1" data-src="https://rk2.nebunexa.com/cvatt.html?get=Rm94U3BvcnRz&lang=1">
+            <div class="vid" data-title="Fox Sports 1" data-src='["https://rk2.nebunexa.com/cvatt.html?get=Rm94U3BvcnRz&lang=1"]'>
                 
                 <img src="img/FoxSports.png" alt="Fox Sports 1" class="logo">
 
                 <h3 class="title">16. Fox Sports 1</h3> 
             </div>
 
-            <div class="vid" data-title="Fox Sports 2" data-src="https://rk2.nebunexa.com/cvatt.html?get=Rm94U3BvcnRzMkhE&lang=1">
+            <div class="vid" data-title="Fox Sports 2" data-src='["https://rk2.nebunexa.com/cvatt.html?get=Rm94U3BvcnRzMkhE&lang=1"]'>
                 
                 <img src="img/FoxSports2.png" alt="Fox Sports 2" class="logo">
 
                 <h3 class="title">17. Fox Sports 2</h3> 
             </div>    
 
-            <div class="vid" data-title="Fox Sports 3" data-src="https://rk2.nebunexa.com/cvatt.html?get=Rm94U3BvcnRzM0hE&lang=1">
+            <div class="vid" data-title="Fox Sports 3" data-src='["https://rk2.nebunexa.com/cvatt.html?get=Rm94U3BvcnRzM0hE&lang=1"]'>
                 
                 <img src="img/FoxSports3.png" alt="Fox Sports 3" class="logo">
 
@@ -154,73 +153,139 @@
             </div>  
             
 
-            <div class="vid" data-title="TNT Sport Argentina" data-src="https://streamtp.live/global2.php?stream=tntsports_argentina">
-                <!--https://rk2.nebunexa.com/cvatt.html?get=VE5UX1Nwb3J0c19IRA&lang=1-->
+            <div class="vid" data-title="TNT Sport Argentina" data-sources='["https://streamtp.live/global2.php?stream=tntsports_argentina"]'>
                 <img src="img/TNTSports.png" alt="TNT Sport Argentina" class="logo">
 
                 <h3 class="title">19. TNT Sport Argentina</h3> 
             </div>
 
-            <div class="vid" data-title="Espn Premium"  data-src="https://streamtp.live/global2.php?stream=espn_premium">
-            <!--data-src="https://rk2.nebunexa.com/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1">-->
-                
+            <div class="vid" data-title="Espn Premium"  data-sources='["https://streamtp.live/global2.php?stream=espn_premium", "https://rk2.nebunexa.com/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1"]'>
                 <img src="img/ESPNPremium.png" alt="Espn Premium" class="logo">
 
                 <h3 class="title">20. Espn Premium</h3> 
             </div>
             
-            <div class="vid" data-title="TyC Sports" data-src="https://rk2.nebunexa.com/cvatt.html?get=VHlDU3BvcnQ&lang=1">
+            <div class="vid" data-title="TyC Sports" data-src='["https://rk2.nebunexa.com/cvatt.html?get=VHlDU3BvcnQ&lang=1"]'>
                 
                 <img src="img/TyCSports.svg" alt="TyC Sports" class="logo">
 
                 <h3 class="title">21. TyC Sports</h3> 
             </div>
 
-            <div class="vid" data-title="DsSport" data-src="https://streamtp.live/global1.php?stream=dsports">
+            <div class="vid" data-title="DsSport" data-src='["https://streamtp.live/global1.php?stream=dsports"]'>
                 
                 <img src="img/DSports.png" alt="DsSport" class="logo">
 
                 <h3 class="title">22. DsSport Ads</h3> 
             </div>
 
-            <div class="vid" data-title="Liga 1" data-src="https://streamtp.live/global1.php?stream=l1max">
+            <div class="vid" data-title="Liga 1" data-src='["https://streamtp.live/global1.php?stream=l1max"]'>
                 
                 <img src="img/L1Max.png" alt="Liga 1" class="logo">
 
                 <h3 class="title">23. Liga 1 Ads</h3> 
             </div>
 
-            <div class="vid" data-title="FoxSport Premium" data-src="https://streamtp.live/global1.php?stream=foxsportspremium">
+            <div class="vid" data-title="FoxSport Premium" data-src='["https://streamtp.live/global1.php?stream=foxsportspremium"]'>
                 
                 <img src="img/FoxSportsPremium.png" alt="FoxSport Premium" class="logo">
 
                 <h3 class="title">24. FoxSport Premium Ads</h3> 
             </div>
             
-            <div class="vid" data-title="Win Sports +" data-src="https://streamtp.live/global1.php?stream=winplus">
+            <div class="vid" data-title="Win Sports +" data-src='["https://streamtp.live/global1.php?stream=winplus"]'>
                 
                 <img src="img/WinSports+.png" alt="Win Sports +" class="logo">
 
                 <h3 class="title">24. Win Sports + Ads</h3> 
             </div>
 
-            <div class="vid" data-title="TUDN" data-src="https://betzta.com/canales.php?stream=tudn">
+            <div class="vid" data-title="TUDN" data-src='["https://betzta.com/canales.php?stream=tudn"]'>
                 
                 <img src="img/TUDN.png" alt="TUDN" class="logo">
 
                 <h3 class="title">25. TUDN Ads</h3> 
             </div>
 
-            <div class="vid" data-title="Claro" data-src="https://clarovideo.forlessmake.store/claro_video.html?get=aHR0cHM6Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKENMQVJPX1NQT1JUU19MQVRBTV9IRCkvbWFuaWZlc3QubXBk&key=NzRjZGNiNjNmZjNlNGYzY2U0ZGE0MjQzYjZkMWUxZDg=&key2=OWI4MzY2ZmE4ZTllYmNkZjRiMzQ5ZDZjOWQ1MjgxMTU=">
+            <div class="vid" data-title="Claro" data-src='["https://clarovideo.forlessmake.store/claro_video.html?get=aHR0cHM6Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKENMQVJPX1NQT1JUU19MQVRBTV9IRCkvbWFuaWZlc3QubXBk&key=NzRjZGNiNjNmZjNlNGYzY2U0ZGE0MjQzYjZkMWUxZDg=&key2=OWI4MzY2ZmE4ZTllYmNkZjRiMzQ5ZDZjOWQ1MjgxMTU="]'>
                 
                 <img src="img/ClaroVideo.png" alt="Claro" class="logo">
 
                 <h3 class="title">26. ClaroVideo Ads</h3> 
             </div>
+
+            <div class="vid" data-title="HBO"  data-sources='["https://rk2.nebunexa.com/cvatt.html?get=SEJPSEQ=&lang=1", "https://televisionlibretv.online/html/clarovideo.html?r=HBO"]'>
+                    
+                    <img src="img/HBO_logo.svg.webp" alt="HBO" class="logo">
+    
+                    <h3 class="title">27. HBO</h3> 
+                </div>
          </div>
     </div>
 
-    <script src="js/script.js">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    
+            // Bloquear intentos de abrir ventanas emergentes
+            window.open = function() {
+                console.log("Intento de abrir una nueva ventana bloqueado.");
+            };
+    
+            // Interceptar clicks para prevenir aperturas de nuevas ventanas
+            document.addEventListener('click', function(event) {
+                event.preventDefault();
+            }, true);
+    
+            const listVideo = document.querySelectorAll('.video-list .vid');
+            const mainVideo = document.querySelector('.main-video iframe');
+            const title = document.querySelector('.main-video .title');
+            const searchBar = document.getElementById('search');
+            const sourceSelect = document.getElementById('sourceSelect');
+            const changeSourceBtn = document.getElementById('changeSourceBtn');
+    
+            listVideo.forEach(video => {
+                video.addEventListener('click', () => {
+                    listVideo.forEach(vid => vid.classList.remove('active'));
+                    video.classList.add('active');
+    
+                    if (video.classList.contains('active')) {
+                        const src = video.dataset.src;
+                        mainVideo.src = src;
+                        title.textContent = video.querySelector('.title').textContent;
+                    }
+    
+                    const sources = JSON.parse(video.dataset.sources);
+                    mainVideo.src = sources[0];
+                    title.textContent = video.querySelector('.title').textContent;
+                    updateSourceOptions(sources);
+                });
+            });
+    
+            searchBar.addEventListener('input', () => {
+                const filter = searchBar.value.toLowerCase();
+                listVideo.forEach(video => {
+                    const title = video.getAttribute('data-title').toLowerCase();
+                    video.style.display = title.includes(filter) ? '' : 'none';
+                });
+            });
+    
+            changeSourceBtn.addEventListener('click', () => {
+                const selectedSource = sourceSelect.value;
+                mainVideo.src = selectedSource;
+            });
+    
+            function updateSourceOptions(sources) {
+                sourceSelect.innerHTML = '';
+                sources.forEach((source, index) => {
+                    const option = document.createElement('option');
+                    option.value = source;
+                    option.textContent = `Fuente ${index + 1}`;
+                    sourceSelect.appendChild(option);
+                });
+            }
+        });
     </script>
+    
 </body>
 </html>

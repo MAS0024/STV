@@ -143,36 +143,36 @@ body {
 
     .container .main-video {
         background: linear-gradient(#0a0a0a, #085280);
-        width: 94%; /* Ajustado para que ocupe todo el ancho del contenedor */
-        max-width: 590px; /* Ancho máximo para mantener proporción en pantallas grandes */
-        height: auto; /* Ajuste automático de altura */
+        width: 94%; 
+        max-width: 590px; 
+        height: auto; 
         border-radius: 5px;
         padding: 10px;
-        margin: 10px; /* Centramos el video */
+        margin: 10px; 
     }
 
     .container .main-video iframe {
-        width: 345px ; /* Ancho del iframe */
-        height: 200px; /* Altura del iframe */
-        max-width: 570px; /* Ancho máximo */
+        width: 345px ; 
+        height: 200px; 
+        max-width: 570px; 
         border-radius: 10px;
         border-color: #009dff;
-        margin: 20px auto; /* Centrado horizontal */
-        display: block; /* Asegura que el iframe se trate como un bloque para centrarlo */
+        margin: 20px auto;
+        display: block; 
     }
 
     .container .video-list {
-        width: 94%; /* Ancho del contenedor completo */
-        max-width: 590px; /* Ancho máximo para mantener proporción en pantallas grandes */
-        height: auto; /* Ajuste automático de altura */
-        max-height: 750px; /* Altura máxima para mantener proporción */
-        margin: 10px; /* Centramos la lista de videos */
+        width: 94%; 
+        max-width: 590px; 
+        height: auto; 
+        max-height: 750px; 
+        margin: 10px;
         display: inline-block;
     }
 
     .container .main-video .title {
         font-size: 16px;
-        text-align: center; /* Centrar el título */
+        text-align: center; 
     }
 
     .container .video-list .vid .title {
@@ -184,56 +184,4 @@ body {
         height: 60px;
     }
 }
-
-
-/*@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 3px;
-        padding: 5px;
-    }
-
-    .heading {
-        font-size: 25px;
-    }
-
-    .search-bar {
-        width: 80%;
-        font-size: 16px;
-        margin-left: 10px;
-        display: inline-block;
-    }
-    }
-
-    .container .main-video iframe{
-        width: 570px;
-        height: 325px;
-        border-radius: 10px;
-        border-color: #009dff;
-    }
-.container .main-video{
-        background: linear-gradient( #0a0a0a, #085280);
-        width: 590px;
-        height: 385px;
-        border-radius: 5px;
-        padding: 10px;
-    }
-    .container .video-list {
-        height: 750px;
-        width: 600px;
-    }
-
-    .container .main-video .title {
-        font-size: 16px;
-    }
-
-    .container .video-list .vid .title {
-        font-size: 12px;
-    }
-
-    .container .video-list .vid .logo {
-        width: 100px;
-        height: 60px;
-    }*/
-
 
