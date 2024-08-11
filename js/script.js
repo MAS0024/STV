@@ -26,7 +26,6 @@
 });
 */
 
-
     document.addEventListener('DOMContentLoaded', () => {
 
         const listVideo = document.querySelectorAll('.video-list .vid');
@@ -35,27 +34,46 @@
         const searchBar = document.getElementById('search');
         const sourceSelect = document.getElementById('sourceSelect');
         const changeSourceBtn = document.getElementById('changeSourceBtn');
-
-        // Bloqueo de ventanas emergentes
+        
+        // Crear una capa superpuesta sobre el iframe
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'transparent';
+        overlay.style.zIndex = '2';
+        overlay.style.cursor = 'pointer';
+        
+        // Insertar la capa superpuesta sobre el iframe
+        const mainVideoContainer = document.querySelector('.main-video');
+        mainVideoContainer.style.position = 'relative';
+        mainVideoContainer.appendChild(overlay);
+        
+        // Quitar la capa superpuesta al primer clic
+        overlay.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            mainVideo.src = mainVideo.src; // Recargar el iframe para asegurar que el video se reproduzca
+            overlay.style.display = 'none'; // Ocultar la capa superpuesta
+        });
+        
         listVideo.forEach(video => {
             video.addEventListener('click', (event) => {
-                // Interceptar el evento click para prevenir que abra una ventana emergente
                 event.preventDefault();
                 event.stopPropagation();
 
                 listVideo.forEach(vid => vid.classList.remove('active'));
                 video.classList.add('active');
 
-                if (video.classList.contains('active')) {
-                    const src = video.dataset.src;
-                    mainVideo.src = src;
-                    title.textContent = video.querySelector('.title').textContent;
-                }
-
                 const sources = JSON.parse(video.dataset.sources);
                 mainVideo.src = sources[0];
                 title.textContent = video.querySelector('.title').textContent;
                 updateSourceOptions(sources);
+                
+                // Restaurar la capa superpuesta cuando se selecciona un nuevo video
+                overlay.style.display = 'block';
             });
         });
 
@@ -70,6 +88,9 @@
         changeSourceBtn.addEventListener('click', () => {
             const selectedSource = sourceSelect.value;
             mainVideo.src = selectedSource;
+            
+            // Restaurar la capa superpuesta cuando se cambia la fuente
+            overlay.style.display = 'block';
         });
 
         function updateSourceOptions(sources) {
@@ -81,14 +102,5 @@
                 sourceSelect.appendChild(option);
             });
         }
-
-        // Previene la apertura de ventanas emergentes desde cualquier clic
-        document.body.addEventListener('click', (event) => {
-            if (event.target.tagName === 'IFRAME') {
-                event.preventDefault();
-                event.stopPropagation();
-                mainVideo.contentWindow.postMessage('play', '*'); // Intentar iniciar la reproducción de manera controlada
-            }
-        }, true);
     });
 
