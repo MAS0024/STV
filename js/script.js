@@ -38,5 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
             option.textContent = `Fuente ${index + 1}`;
             sourceSelect.appendChild(option);
         });
+
+        window.onload = function() {
+            var iframe = document.getElementById('mainPlayer');
+            iframe.onload = function() {
+                var iframeWindow = iframe.contentWindow;
+                var originalOpen = iframeWindow.open;
+                iframeWindow.open = function() {
+                    console.log("Pop-up bloqueado");
+                    return null;  // Previene la apertura de pop-ups
+                };
+            };
+        };
     }
 });
