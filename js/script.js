@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         };*/
 
-        function blockPopups(iframe) {
+       /* function blockPopups(iframe) {
             try {
                 var iframeWindow = iframe.contentWindow || iframe.contentDocument;
 
@@ -130,5 +130,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 blockPopups(iframe);
             };
         };
-    }
+    }*/
+
+        function setIframeSrc(url) {
+            var iframe = document.getElementById('mainPlayer');
+
+            // Si la URL es de "https://televisionlibretv.online/html/fl/?get=VHlDU3BvcnQ", se agrega el sandbox
+            if (url === "https://televisionlibretv.online/") {
+                console.log("Habilitando sandbox para la URL: " + url);
+                iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups-to-escape-sandbox');
+            } else {
+                console.log("Deshabilitando sandbox para la URL: " + url);
+                iframe.removeAttribute('sandbox');
+            }
+
+            // Establece la URL del iframe después de configurar el sandbox
+            iframe.src = url;
+
+            // Bloquea los pop-ups después de que se cargue el iframe
+            iframe.onload = function() {
+                blockPopups(iframe);
+            };
+        }
+
+        window.onload = function() {
+            // Llama a setIframeSrc con la URL que desees cargar
+            setIframeSrc("https://streamtp.live/global1.php?stream=foxsportspremium");
+            // O para otra URL que requiera el sandbox:
+            // setIframeSrc("https://televisionlibretv.online/html/fl/?get=VHlDU3BvcnQ");
+        };}
 });
