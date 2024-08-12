@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return null;  // Previene la apertura de pop-ups
                 };
             };
-        };*/
+        };
 
         window.onload = function() {
             var iframe = document.getElementById('mainPlayer');
@@ -78,6 +78,48 @@ document.addEventListener('DOMContentLoaded', () => {
                     iframe.removeAttribute("sandbox");  // Retira el sandbox si es necesario
                     iframe.src = iframe.src;  // Recarga el iframe sin sandbox
                 }
+            };
+        };*/
+
+        function blockPopups(iframe) {
+            try {
+                var iframeWindow = iframe.contentWindow || iframe.contentDocument;
+                if (iframeWindow) {
+                    // Bloquea el método window.open
+                    iframeWindow.open = function() {
+                        console.log("Intento de pop-up bloqueado");
+                        return null;
+                    };
+
+                    // Bloquea el uso de window.location para abrir nuevas pestañas o ventanas
+                    Object.defineProperty(iframeWindow, 'location', {
+                        set: function(url) {
+                            console.log("Intento de redirección bloqueado:", url);
+                        }
+                    });
+
+                    // Bloquea el uso de window.alert, window.confirm y window.prompt
+                    iframeWindow.alert = function() {
+                        console.log("Intento de alert bloqueado");
+                    };
+                    iframeWindow.confirm = function() {
+                        console.log("Intento de confirm bloqueado");
+                        return false;
+                    };
+                    iframeWindow.prompt = function() {
+                        console.log("Intento de prompt bloqueado");
+                        return null;
+                    };
+                }
+            } catch (error) {
+                console.error("Error bloqueando pop-ups:", error);
+            }
+        }
+
+        window.onload = function() {
+            var iframe = document.getElementById('mainPlayer');
+            iframe.onload = function() {
+                blockPopups(iframe);
             };
         };
     }
