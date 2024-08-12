@@ -55,10 +55,16 @@ body {
     border-radius: 10px;
 }
 
-.container .main-video .title{
+.container h2{
     color: #fafafa;
     font-size: 23px;
     padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container .main-video .title{
+    color: #fafafa;
+    font-size: 23px;
     padding-bottom: 15px;
 }
 
