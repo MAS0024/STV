@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sourceSelect.appendChild(option);
         });
 
-        window.onload = function() {
+ /*       window.onload = function() {
             var iframe = document.getElementById('mainPlayer');
             iframe.onload = function() {
                 var iframeWindow = iframe.contentWindow;
@@ -48,6 +48,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log("Pop-up bloqueado");
                     return null;  // Previene la apertura de pop-ups
                 };
+            };
+        };
+
+         window.onload = function() {
+            var iframe = document.getElementById('mainPlayer');
+            iframe.onload = function() {
+                var iframeWindow = iframe.contentWindow;
+                iframeWindow.open = function() {
+                    console.log("Pop-up bloqueado");
+                    return null;  // Previene la apertura de pop-ups
+                };
+            };
+        };*/
+
+        window.onload = function() {
+            var iframe = document.getElementById('mainPlayer');
+            iframe.onload = function() {
+                var iframeWindow = iframe.contentWindow;
+                var originalOpen = iframeWindow.open;
+
+                try {
+                    iframeWindow.open = function() {
+                        console.log("Pop-up bloqueado");
+                        return null;
+                    };
+                } catch (error) {
+                    console.log("No se puede bloquear pop-ups debido al sandbox. Ajustando...");
+                    iframe.removeAttribute("sandbox");  // Retira el sandbox si es necesario
+                    iframe.src = iframe.src;  // Recarga el iframe sin sandbox
+                }
             };
         };
     }
