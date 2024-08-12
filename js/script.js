@@ -84,32 +84,40 @@ document.addEventListener('DOMContentLoaded', () => {
         function blockPopups(iframe) {
             try {
                 var iframeWindow = iframe.contentWindow || iframe.contentDocument;
+
                 if (iframeWindow) {
-                    // Bloquea el método window.open
+                    // Bloquea window.open
                     iframeWindow.open = function() {
                         console.log("Intento de pop-up bloqueado");
                         return null;
                     };
 
-                    // Bloquea el uso de window.location para abrir nuevas pestañas o ventanas
+                    // Bloquea cambios en window.location
                     Object.defineProperty(iframeWindow, 'location', {
                         set: function(url) {
                             console.log("Intento de redirección bloqueado:", url);
                         }
                     });
 
-                    // Bloquea el uso de window.alert, window.confirm y window.prompt
-                    iframeWindow.alert = function() {
-                        console.log("Intento de alert bloqueado");
-                    };
-                    iframeWindow.confirm = function() {
-                        console.log("Intento de confirm bloqueado");
-                        return false;
-                    };
-                    iframeWindow.prompt = function() {
-                        console.log("Intento de prompt bloqueado");
+                    // Bloquea alert, confirm, prompt
+                    iframeWindow.alert = iframeWindow.confirm = iframeWindow.prompt = function() {
+                        console.log("Intento de alert/confirm/prompt bloqueado");
                         return null;
                     };
+
+                    // Monitorea y bloquea posibles cambios en el DOM que intenten abrir anuncios
+                    new MutationObserver(function(mutations) {
+                        mutations.forEach(function(mutation) {
+                            if (mutation.addedNodes.length) {
+                                Array.from(mutation.addedNodes).forEach(function(node) {
+                                    if (node.tagName === 'SCRIPT' || node.tagName === 'IFRAME') {
+                                        node.parentNode.removeChild(node);
+                                        console.log("Intento de anuncio bloqueado y eliminado:", node.tagName);
+                                    }
+                                });
+                            }
+                        });
+                    }).observe(iframe.contentDocument, { childList: true, subtree: true });
                 }
             } catch (error) {
                 console.error("Error bloqueando pop-ups:", error);
