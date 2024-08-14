@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let mainVideo = document.querySelector('.main-video iframe'); 
     const listVideo = document.querySelectorAll('.video-list .vid');
-    const mainVideo = document.querySelector('.main-video iframe');
     const title = document.querySelector('.main-video .title');
     const sourceSelect = document.getElementById('sourceSelect');
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
-
+    
     listVideo.forEach(video => {
         video.addEventListener('click', () => {
             listVideo.forEach(vid => vid.classList.remove('active'));
@@ -18,8 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     changeSourceBtn.addEventListener('click', () => {
+        const selectedSourceIndex = sourceSelect.selectedIndex;
         const selectedSource = sourceSelect.value;
-        mainVideo.src = selectedSource;
+        const newIframe = document.createElement('iframe');
+        newIframe.id = 'reproductor';
+        newIframe.src = selectedSource;
+        newIframe.allow = 'autoplay; encrypted-media';
+        newIframe.allowFullscreen = true;
+
+        if (selectedSourceIndex !== 1) { 
+            newIframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups-to-escape-sandbox');
+        }
+
+
+        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
+        mainVideo = newIframe;
     });
 
     function updateSourceOptions(sources) {
@@ -40,8 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
- 
-  //BLOQUEO
+
     function bloquearPopups() {
         window.open = function() {
             console.log("Intento de abrir un pop-up bloqueado.");
@@ -56,50 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Llama a la función de bloqueo de pop-ups
     bloquearPopups();
-
-    // Función para cambiar el canal en el iframe
-    document.querySelectorAll('#playlist a').forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            var url = this.getAttribute('data-url');
-            document.getElementById('reproductor').src = url;
-
-            // Resaltar el canal seleccionado
-            document.querySelectorAll('#playlist a').forEach(function(link) {
-                link.style.backgroundColor = '#007bff';
-            });
-            this.style.backgroundColor = '#0056b3';
-        });
-    });
-
-    // Función para recargar el contenido del iframe
-    document.getElementById('recargar-btn').addEventListener('click', function() {
-        var reproductor = document.getElementById('reproductor');
-        reproductor.src = reproductor.src; // Recarga el iframe
-    });
 });
-    function blockPopups(e) {
-            const originalWindowOpen = window.open;
-            
-            window.open = function(url, name, features) {
-                console.log("Intento de apertura de ventana emergente bloqueado:", url);
-                return null; // Bloquea la apertura
-            };
-
-            // Restablece window.open después del clic
-            setTimeout(() => {
-                window.open = originalWindowOpen;
-            }, 1000); // Revertir después de 1 segundo
-        }
-
-        // Añade un evento de clic al iframe para interceptar la interacción
-        document.getElementById('videoIframe').addEventListener('load', function() {
-            const iframeDoc = this.contentDocument || this.contentWindow.document;
-            
-            iframeDoc.addEventListener('click', blockPopups, true);
-            iframeDoc.addEventListener('beforeunload', blockPopups, true);
-        });
-
-
