@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
  
-/*   //BLOQUEO
+  //BLOQUEO
     function bloquearPopups() {
         window.open = function() {
             console.log("Intento de abrir un pop-up bloqueado.");
@@ -101,28 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
             iframeDoc.addEventListener('click', blockPopups, true);
             iframeDoc.addEventListener('beforeunload', blockPopups, true);
         });
-*/
 
 
-        function blockPopups(e) {
-            const originalWindowOpen = window.open;
-            
-            window.open = function(url, name, features) {
-                console.log("Intento de apertura de ventana emergente bloqueado:", url);
-                return null; // Bloquea la apertura
-            };
-
-            // Restablece window.open después del clic
-            setTimeout(() => {
-                window.open = originalWindowOpen;
-            }, 1000); // Revertir después de 1 segundo
-        }
-
-        // Añade un evento de clic al iframe para interceptar la interacción
-        document.getElementById('videoIframe').addEventListener('load', function() {
-            const iframeDoc = this.contentDocument || this.contentWindow.document;
-            
-            iframeDoc.addEventListener('click', blockPopups, true);
-            iframeDoc.addEventListener('beforeunload', blockPopups, true);
-        });
-    });
