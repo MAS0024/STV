@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
     <div class="container">
         <div class="main-video">
             <div class="video">
 
-                <iframe id="reproductor" allow="autoplay; encrypted-media" 
+               <!-- <iframe id="reproductor" allow="autoplay; encrypted-media" 
                         allowfullscreen
                         sandbox="allow-same-origin allow-scripts allow-popups-to-escape-sandbox">
+                </iframe>-->
+
+                <iframe
+                        allow="autoplay; encrypted-media"
+                        frameborder="0" 
+                        allowfullscreen
+                        id="videoIframe">
                 </iframe>
 
                 <h3 class="title">Selecciona un canal</h3>
@@ -25,12 +33,20 @@
             </div>
         </div>
 
+        
         <div class="video-list">
+            <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
+            <div class="vid" data-title="TV Publica" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Q2FuYWw3&lang=1",
+                                                                    "https://streamtp.live/global1.php?stream=tv_publica"]'>
+                <img src="img/TVP.png" alt="TV Publica" class="logo">
+                <h3 class="title">TV Publica</h3>
+            </div>
             <div class="vid" data-title="Telefe" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=VGVsZWZlSEQ=&lang=1"]'>
                 <img src="img/telefe.png" alt="Telefe" class="logo">
                 <h3 class="title">Telefe</h3> 
             </div>
-            <div class="vid" data-title="Espn Premium"  data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1"]'>
+            <div class="vid" data-title="Espn Premium"  data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
+                                                                       "https://streamtp.live/global1.php?stream=espn_premium"]'>
                 <img src="img/ESPNPremium.png" alt="Espn Premium" class="logo">
                 <h3 class="title">Espn Premium</h3> 
             </div>
@@ -38,7 +54,11 @@
                 <img src="img/MTV00s.webp" alt="MTV 00s" class="logo">
                 <h3 class="title">MTV 00s</h3> 
             </div>
-           
+            <div class="vid" data-title="ESPN" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjJIRA&lang=1",
+                                                              "https://streamtp.live/global1.php?stream=espn1"]'>                
+                <img src="img/ESPN.png" alt="ESPN" class="logo">
+                <h3 class="title">ESPN</h3> 
+            </div>
          </div>
     </div>
     <script src="js/script.js"></SCRipt>
