@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let mainVideo = document.querySelector('.main-video iframe'); 
+    let mainVideo = document.querySelector('.main-video iframe'); // Mantenemos la referencia del iframe original
     const listVideo = document.querySelectorAll('.video-list .vid');
     const title = document.querySelector('.main-video .title');
     const sourceSelect = document.getElementById('sourceSelect');
@@ -11,28 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
             listVideo.forEach(vid => vid.classList.remove('active'));
             video.classList.add('active');
             const sources = JSON.parse(video.dataset.sources);
-            mainVideo.src = sources[0];
-            title.textContent = video.querySelector('.title').textContent;
+            
+            // Actualizamos las opciones del select y cambiamos el iframe automáticamente
             updateSourceOptions(sources);
+            changeIframeSource(sources[0]); // Cambiamos la fuente y aplicamos sandbox si es necesario
+            title.textContent = video.querySelector('.title').textContent;
         });
     });
 
     changeSourceBtn.addEventListener('click', () => {
-        const selectedSourceIndex = sourceSelect.selectedIndex;
         const selectedSource = sourceSelect.value;
-        const newIframe = document.createElement('iframe');
-        newIframe.id = 'reproductor';
-        newIframe.src = selectedSource;
-        newIframe.allow = 'autoplay; encrypted-media';
-        newIframe.allowFullscreen = true;
-
-        if (selectedSourceIndex !== 1) { 
-            newIframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups-to-escape-sandbox');
-        }
-
-
-        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
-        mainVideo = newIframe;
+        changeIframeSource(selectedSource);
     });
 
     function updateSourceOptions(sources) {
@@ -44,6 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
             sourceSelect.appendChild(option);
         });
     }
+
+    function changeIframeSource(source) {
+        const selectedSourceIndex = Array.from(sourceSelect.options).findIndex(option => option.value === source);
+        
+        // Creamos un nuevo iframe para cambiar la fuente
+        const newIframe = document.createElement('iframe');
+        newIframe.id = 'reproductor';
+        newIframe.src = source;
+        newIframe.allow = 'autoplay; encrypted-media';
+        newIframe.allowFullscreen = true;
+
+        if (selectedSourceIndex !== 1) { // Aplica el sandbox para cualquier opción que no sea la opción 2
+            newIframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups-to-escape-sandbox');
+        }
+
+        // Reemplazamos el iframe manteniendo la referencia correcta
+        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
+        mainVideo = newIframe; // Actualizamos la referencia de mainVideo
+    }
     
     searchBar.addEventListener('input', () => {
         const filter = searchBar.value.toLowerCase();
@@ -53,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
+    // BLOQUEO DE POP-UPS
     function bloquearPopups() {
         window.open = function() {
             console.log("Intento de abrir un pop-up bloqueado.");
