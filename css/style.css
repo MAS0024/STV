@@ -53,18 +53,13 @@ body {
     width: 1260px;
     height: 720px;
     border-radius: 10px;
-}
-
-.container h2{
-    color: #fafafa;
-    font-size: 23px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    border: none;
 }
 
 .container .main-video .title{
     color: #fafafa;
     font-size: 23px;
+    padding-top: 15px;
     padding-bottom: 15px;
 }
 
@@ -190,25 +185,22 @@ body {
         background: linear-gradient(#0a0a0a, #085280);
         width: 94%; 
         max-width: 590px; 
-        height: auto; 
+        height: 94%; 
         border-radius: 5px;
         padding: 10px;
         margin: 10px; 
     }
 
     .container .main-video iframe {
-        width: 365px ; 
-        height: 210px; 
+        width: 435px ; 
+        height: 265px; 
         max-width: 570px; 
-        border-radius: 10px;
-        border-color: #009dff;
-        margin: 20px auto;
         display: block; 
     }
 
     .container .video-list {
         width: 94%;
-        height: 56%; 
+        height: 98%; 
         max-width: 590px; 
         max-height: 750px; 
         margin: 10px;
