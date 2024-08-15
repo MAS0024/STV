@@ -78,3 +78,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bloquearPopups();
 });
+
+function cambiarFuente() {
+    const sourceSelect = document.getElementById('sourceSelect');
+    const reproductor = document.getElementById('reproductor');
+    const selectedSource = sourceSelect.value;
+
+    if (selectedSource) {
+        reproductor.src = selectedSource;
+    }
+}
+
+function actualizarFuentes(sources) {
+    const sourceSelect = document.getElementById('sourceSelect');
+    sourceSelect.innerHTML = '';
+
+    sources.forEach((source, index) => {
+        const option = document.createElement('option');
+        option.value = source;
+        option.textContent = `Fuente ${index + 1}`;
+        sourceSelect.appendChild(option);
+    });
+
+    
+    if (sources.length > 0) {
+        sourceSelect.value = sources[0];
+        cambiarFuente();
+    }
+}
+
+
+document.querySelectorAll('.vid').forEach((vid) => {
+    vid.addEventListener('click', () => {
+        const sources = JSON.parse(vid.getAttribute('data-sources'));
+        actualizarFuentes(sources);
+    });
+});
+
+document.getElementById('changeSourceBtn').addEventListener('click', cambiarFuente);
