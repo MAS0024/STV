@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>STVLIBRE</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
     <div class="container">
         <div class="main-video">
             <div class="video">
@@ -20,17 +20,17 @@
 
 
                 <h3 class="title">Selecciona un canal</h3>
+                <div class="alternative-sources">
+                    <label for="sourceSelect">Servidor:</label>
+                    <select id="sourceSelect"></select>
+                    <button id="changeSourceBtn">Recargar</button>
+                </div>
             </div>
-            <div class="alternative-sources">
-                <label for="sourceSelect">Servidor:</label>
-                <select id="sourceSelect"></select>
-                <button id="changeSourceBtn">Recargar</button>
-            </div>
+            
         </div>
 
         
         <div class="video-list">
-            <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
             <div class="vid" data-title="TV Publica" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Q2FuYWw3&lang=1", "https://streamtp.live/global1.php?stream=tv_publica"]'>
                 <img src="img/TVP.png" alt="TV Publica" class="logo">
                 <h3 class="title">TV Publica</h3>
@@ -80,47 +80,47 @@
                 <h3 class="title">DeporTV</h3> 
             </div>
 
-            <div class="vid" data-title="ESPN" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjJIRA&lang=1"]'>                
+            <div class="vid" data-title="ESPN" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjJIRA&lang=1", "https://streamtp.live/global1.php?stream=espn1"]'>                
                 <img src="img/ESPN.png" alt="ESPN" class="logo">
                 <h3 class="title">ESPN</h3> 
             </div>
 
-            <div class="vid" data-title="ESPN2" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjJfQXJn&lang=1"]'>               
+            <div class="vid" data-title="ESPN2" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjJfQXJn&lang=1", "https://streamtp.live/global1.php?stream=espn2"]'>               
                 <img src="img/ESPN2.png" alt="ESPN2" class="logo">
                 <h3 class="title">ESPN2</h3> 
             </div>
             
-            <div class="vid" data-title="ESPN3" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjM&lang=1"]'>            
+            <div class="vid" data-title="ESPN3" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=RVNQTjM&lang=1", "https://streamtp.live/global1.php?stream=espn3"]'>            
                 <img src="img/ESPN3.png" alt="ESPN3" class="logo">
                 <h3 class="title">ESPN3</h3> 
             </div>
             
-            <div class="vid" data-title="Fox Sports 1" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94U3BvcnRz&lang=1"]'>           
+            <div class="vid" data-title="Fox Sports 1" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94U3BvcnRz&lang=1", "https://streamtp.live/global1.php?stream=fox1ar"]'>           
                 <img src="img/FoxSports.png" alt="Fox Sports 1" class="logo">
                 <h3 class="title">Fox Sports 1</h3> 
             </div>
 
-            <div class="vid" data-title="Fox Sports 2" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94U3BvcnRzMkhE&lang=1"]'>                
+            <div class="vid" data-title="Fox Sports 2" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94U3BvcnRzMkhE&lang=1", "https://streamtp.live/global1.php?stream=fox2ar"]'>                
                 <img src="img/FoxSports2.png" alt="Fox Sports 2" class="logo">
                 <h3 class="title">Fox Sports 2</h3> 
             </div>    
 
-            <div class="vid" data-title="Fox Sports 3" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94U3BvcnRzM0hE&lang=1"]'>               
+            <div class="vid" data-title="Fox Sports 3" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94U3BvcnRzM0hE&lang=1", "https://streamtp.live/global1.php?stream=fox3ar"]'>               
                 <img src="img/FoxSports3.png" alt="Fox Sports 3" class="logo">
                 <h3 class="title">Fox Sports 3</h3> 
             </div>  
 
-            <div class="vid" data-title="TNT Sport Argentina" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=VE5UX1Nwb3J0c19IRA&lang=1"]'>
+            <div class="vid" data-title="TNT Sport Argentina" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=VE5UX1Nwb3J0c19IRA&lang=1","https://streamtp.live/global1.php?stream=tntsports_argentina"]'>
                 <img src="img/TNTSports.png" alt="TNT Sport Argentina" class="logo">
                 <h3 class="title">TNT Sport Argentina</h3> 
             </div>
 
-            <div class="vid" data-title="Espn Premium"  data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1"]'>
+            <div class="vid" data-title="Espn Premium"  data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1","https://streamtp.live/global1.php?stream=espn_premium"]'>
                 <img src="img/ESPNPremium.png" alt="Espn Premium" class="logo">
                 <h3 class="title">Espn Premium</h3> 
             </div>
             
-            <div class="vid" data-title="TyC Sports" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=VHlDU3BvcnQ&lang=1"]'>               
+            <div class="vid" data-title="TyC Sports" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=VHlDU3BvcnQ&lang=1", "https://streamtp.live/global1.php?stream=tyc_sports"]'>               
                 <img src="img/TyCSports.svg" alt="TyC Sports" class="logo">
                 <h3 class="title">TyC Sports</h3> 
             </div>

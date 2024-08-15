@@ -8,13 +8,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom right, #085280, #0a0a0a);
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(to bottom right, #c0c0c0, #535353);
 }
 
 .heading{
@@ -35,38 +29,39 @@ body {
 }
 
 .container{
-    background: linear-gradient( #c0c0c0, #535353);
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 15px;
     align-items: flex-start;
-    padding: 5px 5%;
+    padding: 18px 1%;
 }
 
 .container .main-video{
-    background: linear-gradient( #0a0a0a, #085280);
+    background: linear-gradient( #69767e, #2a3033);
+    border: 1px solid rgba(0, 0, 0 , .1);
     border-radius: 5px;
     padding: 10px;
+    box-shadow: 0px 10px 30px black;
 }
 
 .container .main-video iframe{
     width: 1260px;
-    height: 720px;
+    height: 710px;
     border-radius: 10px;
-    border: none;
+    border: #000000;
 }
 
 .container .main-video .title{
     color: #fafafa;
+    padding: 10px;
     font-size: 23px;
-    padding-top: 15px;
     padding-bottom: 15px;
 }
 
 .container .video-list{
     background: linear-gradient( #c0c0c0, #535353);
     border-radius: 5px;
-    height: 800px;
+    height: 13.7%;
     overflow-y: scroll;
 }
 
@@ -93,7 +88,6 @@ body {
     margin: 10px;
     padding: 10px;
     border: 1px solid rgba(0, 0, 0 , .1);
-    cursor: pointer;
 }
 
 .container .video-list .vid:hover{
@@ -127,7 +121,7 @@ body {
 .alternative-sources {
     gap: 10px;
     padding: 10px;
-    background-color: #adadad;
+    background-color: #727272;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 400px;
@@ -136,7 +130,7 @@ body {
 
 .alternative-sources label {
     font-size: 14px;
-    color: #333;
+    color: #ffffff;
 }
 
 .alternative-sources select {
@@ -151,7 +145,7 @@ body {
 .alternative-sources button {
     margin: 8px 12px;
     padding: 5px 15px;
-    background-color: #007bff;
+    background-color: #6b6b6b;
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -182,10 +176,10 @@ body {
     }
 
     .container .main-video {
-        background: linear-gradient(#0a0a0a, #085280);
+        background: linear-gradient( #69767e, #2a3033);
         width: 94%; 
         max-width: 590px; 
-        height: 94%; 
+        height: 95%; 
         border-radius: 5px;
         padding: 10px;
         margin: 10px; 
@@ -208,8 +202,7 @@ body {
     }
 
     .container .main-video .title {
-        font-size: 16px;
-        text-align: center; 
+        font-size: 18px;
     }
 
     .container .video-list .vid .title {
