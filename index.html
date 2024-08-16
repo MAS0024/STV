@@ -7,30 +7,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
+
     <div class="container">
         <div class="main-video">
             <div class="video">
-
+                
             <iframe id="reproductor" 
                     allow="autoplay; encrypted-media" 
                     allowfullscreen
                     sandbox="allow-same-origin allow-scripts allow-popups-to-escape-sandbox">
             </iframe>
-
-
-                <h3 class="title">Selecciona un canal</h3>
-                
+                <h3 class="title">Selecciona un canal</h3> 
             </div>
+
             <div class="alternative-sources">
                 <label for="sourceSelect">Servidor:</label>
-                <select id="sourceSelect">Fuente</select><br>
-                <button id="changeSourceBtn">Recargar</button>
+                <select id="sourceSelect">Fuente</select>
             </div>
+            <button id="changeSourceBtn">Recargar</button>
         </div>
 
-        
         <div class="video-list">
+            <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
             <div class="vid" data-title="TV Publica" data-sources='["https://rk2.nebunexa.com/cvatt.php?get=Q2FuYWw3&lang=1", "https://streamtp.live/global1.php?stream=tv_publica"]'>
                 <img src="img/TVP.png" alt="TV Publica" class="logo">
                 <h3 class="title">TV Publica</h3>
