@@ -1,4 +1,3 @@
-// canales.js
 const canales = [
     {
         title: "TV Publica",
