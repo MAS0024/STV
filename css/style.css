@@ -32,6 +32,11 @@ nav
     transition: 0.5s;
 }
 
+nav img{
+    width: 3%;
+    height: 3%;
+    position: sticky;
+}
 nav.sticky
 {
     background: #fff;
@@ -330,6 +335,7 @@ nav .logo
     color: #000000; 
 }
 
+
 .dark-mode #toggleDark {
     color: #ffffff;
 }
@@ -374,4 +380,9 @@ nav .logo
         background-color: #4d4d4d;
     }
 
+    nav img{
+        width: 10%;
+        height: 10%;
+        position: sticky;
+    }
 }
