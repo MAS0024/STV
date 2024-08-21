@@ -6,17 +6,22 @@
 }
 
 body {
-    height:100vh;
+    height:150vh;
     margin: 0;
 }
+
 body.light-mode {
     background: linear-gradient(#ececec, #2a3033);
     color: #ffffff;
+    height:150vh;
+    margin: 0;
 }
 
 body.dark-mode {
     background: linear-gradient(#383838, #2c2c2c);
     color: #cccccc;
+    height:150vh;
+    margin: 0;
 }
 
 
