@@ -213,6 +213,7 @@ nav .logo
     height: 80px;
     object-fit: contain;
     border-radius: 5px; 
+    filter: drop-shadow(0px 2px 8px rgb(0, 0, 0));
 }
 
 
@@ -328,16 +329,14 @@ nav .logo
 }
 
 #toggleDark {
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-
 .light-mode #toggleDark {
     color: #000000; 
 }
-
 
 .dark-mode #toggleDark {
     color: #ffffff;
