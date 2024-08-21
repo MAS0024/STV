@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STVLIBRE</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>
 <body class="light-mode">
     <nav>
-        <img src="img/ico.jpg" id="themeToggleBtn" alt="">
+        <a href="#" class="logo">STVLibre</a>
+        <span id="toggleDark" class="ico"></span>
+
     </nav>
     
     <div class="container">
@@ -25,12 +28,14 @@
             <div class="alternative-sources">
                 <label for="sourceSelect">Servidor:</label>
                 <select id="sourceSelect"></select>
+                <button id="changeSourceBtn">Recargar</button>
             </div>
-            <button id="changeSourceBtn">Recargar</button>
+
         </div>
 
-        <div class="video-list" id="video-list">
-            <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
+        <div class="video-list" id="video-list"> 
+
+                <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
         </div>
     </div>
 

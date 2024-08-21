@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
 
-    // Cargar los canales desde canales.js y crear elementos en la lista de videos
+
     canales.forEach((canal) => {
         const videoElement = document.createElement('div');
         videoElement.classList.add('vid');
@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mainVideo = newIframe;
     }
 
-    // Añadir funcionalidad de búsqueda
     searchBar.addEventListener('input', () => {
         const searchTerm = searchBar.value.toLowerCase();
         listVideo.forEach(video => {
@@ -82,4 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
 });

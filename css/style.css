@@ -19,12 +19,67 @@ body.dark-mode {
     color: #cccccc;
 }
 
-nav{
+
+nav
+{
     top: 0;
     left: 0;
-    height: 50px;
     width: 100%;
-    background: linear-gradient(#bdbdbd, #2a3033);
+    padding: 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+nav.sticky
+{
+    background: #fff;
+    padding: 20px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav.sticky .logo
+{
+    color: #111;
+}
+
+nav .logo
+{
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.light-mode nav .logo
+{
+    color: #000000;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.dark-mode nav .logo
+{
+    color: #ffffff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.heading
+{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111;
 }
 
 .light-mode nav{
@@ -35,13 +90,6 @@ nav{
 .dark-mode nav {
     background: linear-gradient(#1c1c1c, #121212);
     box-shadow: 0px 1px 10px #000000;
-}
-
-.heading {
-    color: #fff;
-    font-size: 28px;
-    text-align: center;
-    padding: 20px;
 }
 
 .container {
@@ -69,12 +117,21 @@ nav{
     background: linear-gradient(#333333, #1a1a1a);
     box-shadow: 0px 1px 22px rgb(112, 112, 112);
 }
+
 .main-video iframe {
     width: 100%;
     height: 500px;
     border-radius: 8px;
     border: none;
+    box-shadow: 0px 5px 10px #000000;
+}
 
+.dark-mode .main-video iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 5px 20px #525252;
 }
 
 .main-video .title {
@@ -87,7 +144,7 @@ nav{
     background: linear-gradient( #c0c0c0, #535353);
     border-radius: 8px;
     padding: 10px;
-    height: 97%;
+    height: 93%;
     max-height: 700px;
     overflow-y: auto;
 }
@@ -168,9 +225,26 @@ nav{
     padding: 10px;
     margin: 10px 0%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     font-size: 16px;
+    background-color: #696969;
     box-shadow: 0px 2px 15px #535353;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0%;
+    border-radius: 5px;
+    color: #00bef8;
+    border: 1px solid #000000;
+    font-size: 16px;
+    background-color: #696969;
+    box-shadow: 0px 2px 15px #535353;
+}
+.search-bar::placeholder {
+    color: #fdfdfd;
+    opacity: 1; 
 }
 
 .alternative-sources {
@@ -191,20 +265,34 @@ nav{
 
 
 .alternative-sources select {
-    padding: 5px;
+    width: 150px; /* Ancho fijo */
+    padding: 8px;
+    font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 16px;
     background-color: #353535;
     color: #fff;
+    transition: border-color 0.3s ease;
 }
 
-#changeSourceBtn {
+.light-mode #changeSourceBtn {
     margin-top: 10px;
     padding: 10px 15px;
     border-radius: 5px;
     background-color:  #2e2e2e;
     color: #fff;
+    border:#000000;
+    box-shadow: 0px 1px 5px #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode #changeSourceBtn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color:  #dadada;
+    color: #000000;
     border:#000000;
     box-shadow: 0px 1px 5px #000000;
     cursor: pointer;
@@ -217,17 +305,33 @@ nav{
 
 #themeToggleBtn {
     padding: 2px 2px;
-    width: 50px;
+    width: 5%;
     height: 50px;
     border-radius: 5px;
-    background-color: #4d4d4d;
-    color: #ffffff;
+    color: #363636;
     border: none;
+    text-align: center;
     cursor: pointer;
+    background-color: #979797;
 }
 
 #themeToggleBtn:hover {
     background-color: #00bef8;
+}
+
+#toggleDark {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+.light-mode #toggleDark {
+    color: #000000; 
+}
+
+.dark-mode #toggleDark {
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {
