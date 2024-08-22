@@ -200,12 +200,16 @@ nav .logo
 }
 
 .video-list .vid:hover {
-    background: #85ceff;
-    box-shadow: 0px 1px 80px #122e3c;
+    background: #0e4366 ;
+    box-shadow: 0px 1px 100px #0f0f0f;
 }
 
-.video-list .vid.active {
-    background: linear-gradient( #eeeeee, #2e2e2e);
+.light-mode .video-list .vid.active {
+    background: #353535;
+}
+
+.dark-mode .video-list .vid.active {
+    background: #a0a0a0;
 }
 
 .video-list .vid .title {
@@ -250,7 +254,7 @@ nav .logo
     padding: 10px;
     margin: 10px 0%;
     border-radius: 5px;
-    color: #00bef8;
+    color: #ffffff;
     border: 1px solid #000000;
     font-size: 16px;
     background-color: #696969;
@@ -330,7 +334,7 @@ nav .logo
 }
 
 #themeToggleBtn:hover {
-    background-color: #00bef8;
+    background-color: #000000;
 }
 
 #toggleDark {

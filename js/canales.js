@@ -4,8 +4,7 @@ const canales = [
         imgSrc: "img/TVP.png",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=Q2FuYWw3&lang=1",
-            "https://streamtp.live/global1.php?stream=tv_publica",
-            "https://rk2.nebunexa.com/cvatt.php?get=Q2FuYWw3&lang=1"
+            "https://streamtp.live/global1.php?stream=tv_publica"
         ]
     },
     {
@@ -26,9 +25,7 @@ const canales = [
         title: "Telefe",
         imgSrc: "img/telefe.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=VGVsZWZlSEQ=&lang=1",
-            "",
-            "https://rk2.nebunexa.com/cvatt.php?get=VGVsZWZlSEQ=&lang=1"
+            "https://7tv.mitele.uno/cv2.php?get=VGVsZWZlSEQ=&lang=1"
         ]
     },
     {
@@ -183,7 +180,7 @@ const canales = [
         title: "FoxSport Premium",
         imgSrc: "img/FoxSportsPremium.png",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://streamtp.live/global1.php?stream=foxsportspremium"
         ]
     },
@@ -191,7 +188,7 @@ const canales = [
         title: "Win Sports +",
         imgSrc: "img/WinSports+.png",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://streamtp.live/global1.php?stream=winplus"
         ]
     },
@@ -199,7 +196,7 @@ const canales = [
         title: "TUDN",
         imgSrc: "img/TUDN.png",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://betzta.com/canales.php?stream=tudn"
         ]
     },
@@ -229,6 +226,69 @@ const canales = [
         imgSrc: "img/mtv00s.webp",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=TVRWMDA=",
+        ]
+    },
+    {
+        title: "TNT",
+        imgSrc: "img/TNT.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VE5UX0hEX0FyZw&lang=1",
+        ]
+    },
+    {
+        title: "FX",
+        imgSrc: "img/FX.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RlhIRA==&lang=1",
+        ]
+    },
+    {
+        title: "Cinemax",
+        imgSrc: "img/Cinemax.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Q2luZW1heA==&lang=1",
+        ]
+    },
+    {
+        title: "Cinecanal",
+        imgSrc: "img/Cinecanal.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Q2luZWNhbmFsSEQ=&lang=1",
+        ]
+    },
+    {
+        title: "StarChannel",
+        imgSrc: "img/StarChannel.svg.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Rk9YSEQ=&lang=1",
+        ]
+    },
+    {
+        title: "Space",
+        imgSrc: "img/Space.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=U3BhY2U=&lang=1",
+        ]
+    },
+    {
+        title: "Studio Universal",
+        imgSrc: "img/StudioUniversal.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=U3R1ZGlvX1VuaXZlcnNhbA==&lang=1",
+        ]
+    },
+    {
+        title: "Sony Channel",
+        imgSrc: "img/SonyChannel.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=U29ueUhE&lang=1",
+        ]
+    },
+    {
+        title: "Paramount Network",
+        imgSrc: "img/Paramount_Network.svg",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=UGFyYW1vdW50&lang=1",
         ]
     },
     {
@@ -292,6 +352,13 @@ const canales = [
         imgSrc: "img/Universal_TV.png",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX0NoYW5uZWxfSEQ=",
+        ]
+    },
+    {
+        title: "Universal Premiere",
+        imgSrc: "img/Universal_Premiere.svg",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1ByZW1pZXJl&lang=1",
         ]
     },
     {
