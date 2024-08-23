@@ -6,25 +6,22 @@
     <title>STVLIBRE</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
 </head>
 <body class="light-mode">
     <nav>
         <a href="#" class="logo">STV</a>
         <i id="toggleDark" class="bi bi-brightness-high"></i>
-
-    </nav>
-    
+    </nav>   
     <div class="container">
-
         <div class="main-video">
             <div class="video">
                 <iframe id="reproductor" 
                         allow="autoplay; encrypted-media" 
                         allowfullscreen
                         sandbox="allow-same-origin allow-scripts allow-popups-to-escape-sandbox">
-                </iframe>
+                </iframe>               
                 <h3 class="title">Selecciona el canal:</h3> 
+                <!-- <p class="description">Descripcion</p> -->
             </div>
             <div class="alternative-sources">
                 <label for="sourceSelect">Servidor:</label>
@@ -32,14 +29,11 @@
                 <button id="changeSourceBtn">Recargar</button>
             </div>
             <button class="btn" onclick="window.open('https://chrome.google.com/webstore/detail/opmeopcambhfimffbomjgemehjkbbmji', '_blank')">Descargar Extension</button>
-        </div>
-
+        </div>       
         <div class="video-list" id="video-list"> 
-
                 <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
         </div>
     </div>
-
     <script src="js/canales.js"></script>
     <script src="js/script.js"></script>
     <script src="js/mode.js"></script>

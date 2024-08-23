@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoListContainer = document.getElementById('video-list');
     let mainVideo = document.querySelector('.main-video iframe');
     const title = document.querySelector('.main-video .title');
+    const description = document.querySelector('.main-video .description');
     const sourceSelect = document.getElementById('sourceSelect');
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
         videoElement.dataset.title = canal.title;
+        videoElement.dataset.description = canal.description; // Almacena la descripción en el dataset
 
         videoElement.innerHTML = `
             <img src="${canal.imgSrc}" alt="${canal.title}" />
@@ -32,7 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateSourceOptions(sources);
             changeIframeSource(sources[0]);
-            title.textContent = video.querySelector('.title').textContent;
+
+            // Actualiza el título y la descripción en la sección principal
+            title.textContent = video.dataset.title;
+            //description.textContent = video.dataset.description;
         });
     });
 
@@ -42,16 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateSourceOptions(sources) {
-        sourceSelect.innerHTML = '';
-        sources.forEach((source, index) => {
-            if (source) {
-                const option = document.createElement('option');
-                option.value = source;
-                option.textContent = `Opcion ${index + 1}`;
-                sourceSelect.appendChild(option);
+    sourceSelect.innerHTML = '';
+    sources.forEach((source, index) => {
+        if (source) {
+            const option = document.createElement('option');
+            option.value = source;
+
+            // Agrega "ads" a la opción 2 si está disponible
+            if (index === 1) { // Index 1 corresponde a la segunda opción
+                option.textContent = `Opción ${index + 1} (ads)`;
+            } else {
+                option.textContent = `Opción ${index + 1}`;
             }
-        });
-    }
+
+            sourceSelect.appendChild(option);
+        }
+    });
+}
+
 
     function changeIframeSource(source) {
         const selectedSourceIndex = Array.from(sourceSelect.options).findIndex(option => option.value === source);
