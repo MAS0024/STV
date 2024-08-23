@@ -148,7 +148,7 @@ const canales = [
         title: "DsSport",
         imgSrc: "img/DSports.png",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://streamtp.live/global1.php?stream=dsports"
         ]
     },
@@ -156,7 +156,7 @@ const canales = [
         title: "DsSport 2",
         imgSrc: "img/DSports2.png",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://streamtp.live/global1.php?stream=dsports_2"
         ]
     },
@@ -164,7 +164,7 @@ const canales = [
         title: "DsSport Plus",
         imgSrc: "img/DSportsPlus.webp",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://streamtp.live/global1.php?stream=dsports_plus"
         ]
     },
@@ -172,7 +172,7 @@ const canales = [
         title: "Liga 1",
         imgSrc: "img/L1Max.png",
         sources: [
-            "img/0.jpg",
+            "img/00.png",
             "https://streamtp.live/global1.php?stream=l1max"
         ]
     },
