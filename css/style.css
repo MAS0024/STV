@@ -157,7 +157,7 @@ nav .logo
     background: linear-gradient( #c0c0c0, #535353);
     border-radius: 8px;
     padding: 10px;
-    height: 93%;
+    height: 100%;
     max-height: 700px;
     overflow-y: auto;
 }
@@ -419,8 +419,8 @@ nav .logo
         margin-top: 10px;
         padding: 10px 15px;
         border-radius: 5px;
-        background-color:  #636363;
-        color: #fff;
+        background-color:  #dadada;
+        color: #000000;
         border:#000000;
         box-shadow: 0px 1px 5px #000000;
         cursor: pointer;
@@ -430,7 +430,29 @@ nav .logo
     #changeSourceBtn:hover {
         background-color: #4d4d4d;
     }
-
+    .light-mode .btn {
+        margin-top: 10px;
+        padding: 12px 15px;
+        border-radius: 5px;
+        background-color:  #2e2e2e;
+        color: #fff;
+        border:#000000;
+        box-shadow: 0px 1px 5px #000000;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .dark-mode .btn {
+        margin-top: 10px;
+        padding: 12px 15px;
+        border-radius: 5px;
+        background-color:  #dadada;
+        color: #000000;
+        border:#000000;
+        box-shadow: 0px 1px 5px #000000;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
     nav img{
         width: 15%;
         height: 15%;
