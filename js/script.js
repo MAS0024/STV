@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (source) {
                 const option = document.createElement('option');
                 option.value = source;
-                option.textContent = `Fuente ${index + 1}`;
+                option.textContent = `Opcion ${index + 1}`;
                 sourceSelect.appendChild(option);
             }
         });

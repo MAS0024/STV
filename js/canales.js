@@ -145,7 +145,7 @@ const canales = [
         ]
     },
     {
-        title: "DsSport",
+        title: "DsSport (Op2)",
         imgSrc: "img/DSports.png",
         sources: [
             "img/00.png",
@@ -153,7 +153,7 @@ const canales = [
         ]
     },
     {
-        title: "DsSport 2",
+        title: "DsSport 2 (Op2)",
         imgSrc: "img/DSports2.png",
         sources: [
             "img/00.png",
@@ -161,7 +161,7 @@ const canales = [
         ]
     },
     {
-        title: "DsSport Plus",
+        title: "DsSport + (Op2)",
         imgSrc: "img/DSportsPlus.webp",
         sources: [
             "img/00.png",
@@ -169,7 +169,7 @@ const canales = [
         ]
     },
     {
-        title: "Liga 1",
+        title: "Liga 1 (Op2)",
         imgSrc: "img/L1Max.png",
         sources: [
             "img/00.png",
@@ -177,7 +177,7 @@ const canales = [
         ]
     },
     {
-        title: "FoxSport Premium",
+        title: "FoxSport Premium (Op2)",
         imgSrc: "img/FoxSportsPremium.png",
         sources: [
             "img/00.png",
@@ -185,7 +185,7 @@ const canales = [
         ]
     },
     {
-        title: "Win Sports +",
+        title: "Win Sports + (Op2)",
         imgSrc: "img/WinSports+.png",
         sources: [
             "img/00.png",
@@ -193,7 +193,7 @@ const canales = [
         ]
     },
     {
-        title: "TUDN",
+        title: "TUDN (Op2)",
         imgSrc: "img/TUDN.png",
         sources: [
             "img/00.png",
