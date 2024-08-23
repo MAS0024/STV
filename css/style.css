@@ -321,6 +321,33 @@ nav .logo
     background-color: #4d4d4d;
 }
 
+.light-mode .btn {
+    margin-top: 10px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    background-color:  #2e2e2e;
+    color: #fff;
+    border:#000000;
+    box-shadow: 0px 1px 5px #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .btn {
+    margin-top: 10px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    background-color:  #dadada;
+    color: #000000;
+    border:#000000;
+    box-shadow: 0px 1px 5px #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #4d4d4d;
+}
 #themeToggleBtn {
     padding: 2px 2px;
     width: 5%;
