@@ -193,14 +193,6 @@ const canales = [
         ]
     },
     {
-        title: "TUDN (Op2)",
-        imgSrc: "img/TUDN.png",
-        sources: [
-            "img/00.png",
-            "https://betzta.com/canales.php?stream=tudn"
-        ]
-    },
-    {
         title: "Claro",
         imgSrc: "img/ClaroVideo.png",
         sources: [
@@ -292,6 +284,14 @@ const canales = [
         ]
     },
     {
+        title: "Warner Channel",
+        imgSrc: "img/Warner.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=V2FybmVySEQ="
+
+        ]
+    },
+    {
         title: "HBO",
         imgSrc: "img/hbo_logo.svg.webp",
         sources: [
@@ -355,18 +355,39 @@ const canales = [
         ]
     },
     {
+        title: "Universal Cinema",
+        imgSrc: "img/Universal_Cinema.svg",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX0NpbmVtYQ==&lang=1",
+        ]
+    },
+    {
+        title: "Universal Crime",
+        imgSrc: "img/Universal_Crime.svg",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=dW5pdmVyc2FsX0NyaW1l&lang=1",
+        ]
+    },
+    {
+        title: "Universal Comedy",
+        imgSrc: "img/Universal_Comedy.svg",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX0NvbWVkeQ==&lang=1",
+        ]
+    },
+    {
+        title: "Universal Reality",
+        imgSrc: "img/Universal_Reality.svg",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1JlYWxpdHk=&lang=1",
+        ]
+    },
+    
+    {
         title: "Universal Premiere",
         imgSrc: "img/Universal_Premiere.svg",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1ByZW1pZXJl&lang=1",
-        ]
-    },
-    {
-        title: "Warner Channel",
-        imgSrc: "img/Warner.png",
-        sources: [
-            "https://7tv.mitele.uno/cv2.php?get=V2FybmVySEQ="
-
         ]
     }
 ];
