@@ -129,6 +129,8 @@ const canales = [
             "https://7tv.mitele.uno/cv2.php?get=RWxfR2FyYWdl"
         ]
     },
+
+    /** --------------------  Deportes   */
     {
         title: "DeporTV",
         imgSrc: "img/DeporTV.png",
@@ -303,6 +305,66 @@ const canales = [
             "https://clarovideo.forlessmake.store/claro_video.html?get=aHR0cHM6Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKENMQVJPX1NQT1JUU19MQVRBTV9IRCkvbWFuaWZlc3QubXBk&key=NzRjZGNiNjNmZjNlNGYzY2U0ZGE0MjQzYjZkMWUxZDg=&key2=OWI4MzY2ZmE4ZTllYmNkZjRiMzQ5ZDZjOWQ1MjgxMTU="
         ]
     },
+
+    /** --------------------  Discovery   */
+    {
+        title: "Discovery Channel",
+        imgSrc: "img/discovery.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5SEQ=",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5SEQ=&lang=1"
+        ]
+    },
+    {
+        title: "Discovery Channel",
+        imgSrc: "img/disworld.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X1dvcmxkX0hE",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X1dvcmxkX0hE&lang=1"
+        ]
+    },
+    {
+        title: "Discovery Theater",
+        imgSrc: "img/distheater.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VGhlYXRlcl9IRA==",
+            "https://7tv.mitele.uno/cv2.php?get=VGhlYXRlcl9IRA==&lang=1"
+        ]
+    },
+    {
+        title: "Discovery Science",
+        imgSrc: "img/disscience.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X1NjaWVuY2U=",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X1NjaWVuY2U=&lang=1"
+        ]
+    },
+    {
+        title: "Discovery H&H",
+        imgSrc: "img/hyh.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE&lang=1"
+        ]
+    },
+    {
+        title: "Discovery TLC",
+        imgSrc: "img/tlc.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VExD",
+            "https://7tv.mitele.uno/cv2.php?get=VExD&lang=1"
+        ]
+    },
+    {
+        title: "Discovery Turbo",
+        imgSrc: "img/turbo.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5VHVyYm8=",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5VHVyYm8=&lang=1"
+        ]
+    },
+
+    /** --------------------   Musica */
     {
         title: "HTV",
         imgSrc: "img/HTV.webp",
@@ -348,6 +410,7 @@ const canales = [
             "https://7tv.mitele.uno/cv2.php?get=Q00="
         ]
     },
+    /** --------------------  Entretenimiento  */
     {
         title: "TNT",
         imgSrc: "img/TNT.png",
@@ -417,6 +480,46 @@ const canales = [
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=V2FybmVySEQ="
 
+        ]
+    },
+    {
+        title: "A&E",
+        imgSrc: "img/ae.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=QUVIRA==&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=QUVIRA=="
+        ]
+    },
+    {
+        title: "AXN",
+        imgSrc: "img/axn.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=QVhOSEQ=&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=QVhOSEQ="
+        ]
+    },
+    {
+        title: "TCM",
+        imgSrc: "img/tcm.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=VENN&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=VENN"
+        ]
+    },
+    {
+        title: "E! Entertainment",
+        imgSrc: "img/e.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RV9FbnRlcnRhaW5tZW50X1RlbGV2aXNpb24=&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=RV9FbnRlcnRhaW5tZW50X1RlbGV2aXNpb24="
+        ]
+    },
+    {
+        title: "AMC",
+        imgSrc: "img/amc.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=QU1D&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=QU1D"
         ]
     },
     {
@@ -524,6 +627,69 @@ const canales = [
             "https://7tv.mitele.uno/cv2.php?get=QWR1bHRfU3dpbQ==&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QWR1bHRfU3dpbQ==",
         ]
-    }
-    
+    },
+    {
+        title: "DreamWorks",
+        imgSrc: "img/dream.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RHJlYW13b3Jrcw==&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=RHJlYW13b3Jrcw==",
+        ]
+    },
+    {
+        title: "Nick Jr.",
+        imgSrc: "img/nickjr.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Tmlja19Kcg==&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=Tmlja19Kcg==",
+        ]
+    },
+    {
+        title: "Nickelodeon",
+        imgSrc: "img/nick.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Tmlja2Vsb2Rlb24=&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=Tmlja2Vsb2Rlb24=",
+        ]
+    },
+    {
+        title: "Discovery Kids",
+        imgSrc: "img/diskids.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X0tpZHM=&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X0tpZHM=",
+        ]
+    },
+    {
+        title: "Disney Junior",
+        imgSrc: "img/disneyjr.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzbmV5SnI=&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzbmV5SnI=",
+        ]
+    },
+    {
+        title: "Disney Channel",
+        imgSrc: "img/disney.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=RGlzbmV5Q2hhbm5lbEhE&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=RGlzbmV5Q2hhbm5lbEhE",
+        ]
+    },
+    {
+        title: "Cartoonito",
+        imgSrc: "img/cart.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Qm9vbWVyYW5n&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=Qm9vbWVyYW5n",
+        ]
+    },
+    {
+        title: "Cartoon Network",
+        imgSrc: "img/cn.webp",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Q2FydG9vbk5ldHdvcms=&lang=1",
+            "https://7tv.mitele.uno/cv2.php?get=Q2FydG9vbk5ldHdvcms=",
+        ]
+    },
 ];
