@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateSourceOptions(sources);
             changeIframeSource(sources[0]);
-
+            autoSelectAvailableSource(sources);
             // Actualiza el título y la descripción en la sección principal
             title.textContent = video.dataset.title;
             //description.textContent = video.dataset.description;
@@ -47,24 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateSourceOptions(sources) {
-    sourceSelect.innerHTML = '';
-    sources.forEach((source, index) => {
-        if (source) {
-            const option = document.createElement('option');
-            option.value = source;
-
-            // Agrega "ads" a la opción 2 si está disponible
-            if (index === 1) { // Index 1 corresponde a la segunda opción
-                option.textContent = `Opción ${index + 1} (ads)`;
-            } else {
-                option.textContent = `Opción ${index + 1}`;
+        sourceSelect.innerHTML = '';
+        sources.forEach((source, index) => {
+            if (source) {
+                const option = document.createElement('option');
+                option.value = source;
+    
+                // Verifica si la URL contiene "https://streamtp.live/global1.php?stream="
+                if (source.includes("https://streamtp.live/global1.php?stream=")) {
+                    option.textContent = `Opción ${index + 1} (Ads)`;
+                } else {
+                    option.textContent = `Opción ${index + 1}`;
+                }
+    
+                sourceSelect.appendChild(option);
             }
-
-            sourceSelect.appendChild(option);
-        }
-    });
+        });
+    }
+    
+function autoSelectAvailableSource(sources) {
+    const firstValidSource = sources.find(source => source !== "");
+    if (firstValidSource) {
+        changeIframeSource(firstValidSource);
+    }
 }
-
 
     function changeIframeSource(source) {
         const selectedSourceIndex = Array.from(sourceSelect.options).findIndex(option => option.value === source);
@@ -75,9 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         newIframe.allow = 'autoplay; encrypted-media';
         newIframe.allowFullscreen = true;
 
-        if (selectedSourceIndex !== 1) {
-            newIframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups-to-escape-sandbox');
-        }
 
         mainVideo.parentNode.replaceChild(newIframe, mainVideo);
         mainVideo = newIframe;
