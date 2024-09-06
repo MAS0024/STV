@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
         videoElement.dataset.title = canal.title;
-        videoElement.dataset.description = canal.description; // Almacena la descripción en el dataset
+        videoElement.dataset.description = canal.description; // sin uso
 
         videoElement.innerHTML = `
             <img src="${canal.imgSrc}" alt="${canal.title}" />
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSourceOptions(sources);
             changeIframeSource(sources[0]);
             autoSelectAvailableSource(sources);
-            // Actualiza el título y la descripción en la sección principal
+
             title.textContent = video.dataset.title;
-            //description.textContent = video.dataset.description;
+
         });
     });
 
@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const option = document.createElement('option');
                 option.value = source;
     
-                // Verifica si la URL contiene "https://streamtp.live/global1.php?stream="
                 if (source.includes("https://streamtp.live/global1.php?stream=")) {
                     option.textContent = `Opción ${index + 1} (Ads)`;
                 } else {
