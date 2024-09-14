@@ -1,4 +1,4 @@
-
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +23,7 @@ body.dark-mode {
     color: #cccccc;
 }
 
+/* Navigation Styles */
 nav {
     top: 0;
     left: 0;
@@ -72,6 +73,7 @@ nav.sticky .logo {
     color: #ffffff;
 }
 
+/* Heading Styles */
 .heading {
     width: 100%;
     text-align: center;
@@ -79,6 +81,7 @@ nav.sticky .logo {
     color: #111;
 }
 
+/* Container Styles */
 .container {
     display: grid;
     gap: 10px;
@@ -91,7 +94,7 @@ nav.sticky .logo {
     height: 100%;
 }
 
-
+/* Main Video Styles */
 .main-video {
     background: linear-gradient(#69767e, #2a3033);
     border-radius: 8px;
@@ -139,12 +142,12 @@ nav.sticky .logo {
     filter: drop-shadow(0px 2px 8px rgb(0, 0, 0));
 }
 
-
 .video-list {
     background: linear-gradient(#c0c0c0, #535353);
     border-radius: 8px;
     padding: 10px;
     max-height: 650px;
+    height: 100%;
     overflow-y: auto;
 }
 
@@ -236,7 +239,7 @@ nav.sticky .logo {
     filter: drop-shadow(0px 0px 5px rgb(206, 206, 206));
 }
 
-
+/* Search Bar Styles */
 .search-bar {
     display: flex;
     width: 60%;
@@ -271,7 +274,7 @@ nav.sticky .logo {
     color: #ffffff;
 }
 
-
+/* Alternative Sources Styles */
 .alternative-sources {
     margin-top: 10px;
 }
@@ -309,6 +312,7 @@ nav.sticky .logo {
     color: #ffffff;
 }
 
+/* Button Styles */
 .btn,
 #changeSourceBtn {
     margin-top: 10px;
@@ -338,6 +342,7 @@ nav.sticky .logo {
     color: #000000;
 }
 
+/* Theme Toggle Button */
 #themeToggleBtn {
     padding: 2px;
     width: 5%;
@@ -368,7 +373,7 @@ nav.sticky .logo {
     color: #ffffff;
 }
 
-
+/* Footer Styles */
 footer {
     padding: 10px 0;
     display: flex;
@@ -419,7 +424,7 @@ footer {
     text-decoration: none;
 }
 
-
+/* Responsive Design */
 @media (max-width: 768px) {
     body {
         height: 20vh;
