@@ -211,6 +211,14 @@ const canales = [
         ]
     },
     {
+        title: "Espn Premium",
+        imgSrc: "img/ESPNPremium.png",
+        sources: [
+            "https://7tv.mitele.uno/cv2.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
+            "https://streamtp.live/global1.php?stream=espn_premium"
+        ]
+    },
+    {
         title: "Fox Sports 1",
         imgSrc: "img/FoxSports.png",
         sources: [
@@ -243,19 +251,32 @@ const canales = [
         ]
     },
     {
-        title: "Espn Premium",
-        imgSrc: "img/ESPNPremium.png",
-        sources: [
-            "https://7tv.mitele.uno/cv2.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
-            "https://streamtp.live/global1.php?stream=espn_premium"
-        ]
-    },
-    {
         title: "TyC Sports",
         imgSrc: "img/TyCSports.svg",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=VHlDU3BvcnQ&lang=1",
             "https://streamtp.live/global1.php?stream=tyc_sports"
+        ]
+    },
+    {
+        title: "Star+ ESPN",
+        imgSrc: "img/ESPNPlus.svg",
+        sources: [
+            "https://streamtp.live/global1.php?stream=starplus01",
+            "https://streamtp.live/global1.php?stream=starplus01",
+            "https://streamtp.live/global1.php?stream=starplus02",
+            "https://streamtp.live/global1.php?stream=starplus03",
+            "https://streamtp.live/global1.php?stream=starplus04",
+            "https://streamtp.live/global1.php?stream=starplus05",
+            "https://streamtp.live/global1.php?stream=starplus06",
+            "https://streamtp.live/global1.php?stream=starplus07",
+            "https://streamtp.live/global1.php?stream=starplus08",
+            "https://streamtp.live/global1.php?stream=starplus09",
+            "https://streamtp.live/global1.php?stream=starplus10",
+            "https://streamtp.live/global1.php?stream=starplus11",
+            "https://streamtp.live/global1.php?stream=starplus12",
+            "https://streamtp.live/global1.php?stream=starplus13",
+            "https://streamtp.live/global1.php?stream=starplus14",
         ]
     },
     {
