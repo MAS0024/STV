@@ -81,7 +81,7 @@ function autoSelectAvailableSource(sources) {
         newIframe.id = 'reproductor';
         newIframe.src = source;
         newIframe.allow = 'autoplay; encrypted-media';
-        newIframe.allowFullscreen = true;
+        newIframe.allowFullscreen;
 
 
         mainVideo.parentNode.replaceChild(newIframe, mainVideo);
