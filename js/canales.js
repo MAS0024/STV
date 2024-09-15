@@ -280,6 +280,22 @@ const canales = [
         ]
     },
     {
+        title: "MLS Season Pass",
+        imgSrc: "img/MLSSeasonPass.svg",
+        sources: [
+            "https://la10hd.com/vivo/canales.php?stream=mls2",
+            "https://la10hd.com/vivo/canales.php?stream=mls3",
+            "https://la10hd.com/vivo/canales.php?stream=mls4",
+            "https://la10hd.com/vivo/canales.php?stream=mls5",
+            "https://la10hd.com/vivo/canales.php?stream=mls6",
+            "https://la10hd.com/vivo/canales.php?stream=mls7",
+            "https://la10hd.com/vivo/canales.php?stream=mls8",
+            "https://la10hd.com/vivo/canales.php?stream=mls9",
+            "https://la10hd.com/vivo/canales.php?stream=mls10"
+            
+        ]
+    },
+    {
         title: "DsSport",
         imgSrc: "img/DSports.png",
         sources: [
