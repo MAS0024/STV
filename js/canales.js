@@ -262,9 +262,9 @@ const canales = [
         title: "Star+ ESPN",
         imgSrc: "img/ESPNPlus.svg",
         sources: [
-            "https://streamtp.live/global1.php?stream=eventos3",
             "https://streamtp.live/global1.php?stream=starplus01",
-            "https://streamtp.live/global1.php?stream=eventos3",
+            "https://streamtp.live/global1.php?stream=starplus01",
+            "https://streamtp.live/global1.php?stream=starplus02",
             "https://streamtp.live/global1.php?stream=starplus03",
             "https://streamtp.live/global1.php?stream=starplus04",
             "https://streamtp.live/global1.php?stream=starplus05",
@@ -283,7 +283,7 @@ const canales = [
         title: "MLS Season Pass",
         imgSrc: "img/MLSSeasonPass.svg",
         sources: [
-            "https://la10hd.com/vivo/canales.php?stream=mls2",
+            "https://streamtp.live/global1.php?stream=eventos3",
             "https://la10hd.com/vivo/canales.php?stream=mls3",
             "https://la10hd.com/vivo/canales.php?stream=mls4",
             "https://la10hd.com/vivo/canales.php?stream=mls5",
