@@ -264,7 +264,7 @@ const canales = [
         sources: [
             "https://streamtp.live/global1.php?stream=eventos3",
             "https://streamtp.live/global1.php?stream=starplus01",
-            "https://streamtp.live/global1.php?stream=starplus02",
+            "https://streamtp.live/global1.php?stream=eventos3",
             "https://streamtp.live/global1.php?stream=starplus03",
             "https://streamtp.live/global1.php?stream=starplus04",
             "https://streamtp.live/global1.php?stream=starplus05",
