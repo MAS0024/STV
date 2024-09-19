@@ -262,7 +262,7 @@ const canales = [
         title: "Star+ ESPN",
         imgSrc: "img/ESPNPlus.svg",
         sources: [
-            "https://streamtp.live/global1.php?stream=starplus01",
+            "https://streamtp.live/global1.php?stream=eventos3",
             "https://streamtp.live/global1.php?stream=starplus01",
             "https://streamtp.live/global1.php?stream=starplus02",
             "https://streamtp.live/global1.php?stream=starplus03",
