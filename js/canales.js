@@ -3,7 +3,7 @@ const canales = [
         title: "LN+",
         imgSrc: "img/LN+.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=TGFfTmFjaW9u&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=TGFfTmFjaW9u&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=TGFfTmFjaW9u"
         ]
     },
@@ -11,6 +11,7 @@ const canales = [
         title: "TV Publica",
         imgSrc: "img/TVP.png",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=Q2FuYWw3&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Q2FuYWw3&lang=1",
             "https://streamtp.live/global1.php?stream=tv_publica"
         ]
@@ -19,7 +20,7 @@ const canales = [
         title: "America TV",
         imgSrc: "img/AmericaTV.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=QW1lcmljYVRW&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=QW1lcmljYVRW&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QW1lcmljYVRW"
         ]
     },
@@ -27,7 +28,7 @@ const canales = [
         title: "El Nueve",
         imgSrc: "img/ElNueve.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=Q2FuYWw5&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=Q2FuYWw5&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Q2FuYWw5"
         ]
     },
@@ -35,7 +36,7 @@ const canales = [
         title: "Telefe",
         imgSrc: "img/telefe.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=VGVsZWZlSEQ=&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=VGVsZWZlSEQ=&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=VGVsZWZlSEQ="
         ]
     },
@@ -43,7 +44,7 @@ const canales = [
         title: "El Trece",
         imgSrc: "img/Trece.svg",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=QXJ0ZWFySEQ&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=QXJ0ZWFySEQ&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QXJ0ZWFySEQ&"
         ]
     },
@@ -51,7 +52,7 @@ const canales = [
         title: "CronicaTV",
         imgSrc: "img/Cronica.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=Q3JvbmljYVRW&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=Q3JvbmljYVRW&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Q3JvbmljYVRW"
         ]
     },
@@ -59,7 +60,7 @@ const canales = [
         title: "C5N",
         imgSrc: "img/C5N.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=QzVO&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=QzVO&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QzVO"
         ]
     },
@@ -67,7 +68,7 @@ const canales = [
         title: "TN",
         imgSrc: "img/TN.svg",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=VG9kb05vdGljaWFz&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=VG9kb05vdGljaWFz&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=VG9kb05vdGljaWFz"
         ]
     },
@@ -75,7 +76,7 @@ const canales = [
         title: "C26",
         imgSrc: "img/C26.svg",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=MjZfVFZfSEQ&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=MjZfVFZfSEQ&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=MjZfVFZfSEQ"
         ]
     },
@@ -83,7 +84,7 @@ const canales = [
         title: "A24",
         imgSrc: "img/A24.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=QW1lcmljYTI0&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=QW1lcmljYTI0&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QW1lcmljYTI0"
         ]
     },
@@ -91,7 +92,7 @@ const canales = [
         title: "DTV (Diputados)",
         imgSrc: "img/DTV.webp",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=RGlwdXRhZG9zX1RW",
+            "https://teve3.mitele.uno/cv2.php?get=RGlwdXRhZG9zX1RW",
             "https://7tv.mitele.uno/cv2.php?get=RGlwdXRhZG9zX1RW&lang=1"
         ]
     },
@@ -99,7 +100,7 @@ const canales = [
         title: "Volver",
         imgSrc: "img/Volver.webp",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=Vm9sdmVy&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=Vm9sdmVy&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Vm9sdmVy"
         ]
     },
@@ -107,7 +108,7 @@ const canales = [
         title: "CineAr",
         imgSrc: "img/CineAr.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=SU5DQUFfVHY=&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=SU5DQUFfVHY=&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=SU5DQUFfVHY="
         ]
     },
@@ -115,7 +116,7 @@ const canales = [
         title: "TeleMax",
         imgSrc: "img/Telemax.webp",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=VGVsZW1heA&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=VGVsZW1heA&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=VGVsZW1heA"
         ]
     },
@@ -123,7 +124,7 @@ const canales = [
         title: "Ciudad Megazine",
         imgSrc: "img/ciudad.webp",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=TWFnYXppbmU=&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=TWFnYXppbmU=&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=TWFnYXppbmU="
             
         ]
@@ -132,7 +133,7 @@ const canales = [
         title: "GarageTV",
         imgSrc: "img/GarageTV.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=RWxfR2FyYWdl&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=RWxfR2FyYWdl&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=RWxfR2FyYWdl"
         ]
     },
@@ -142,7 +143,7 @@ const canales = [
         title: "DeporTV",
         imgSrc: "img/DeporTV.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=RGVwb3JUVkhE&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=RGVwb3JUVkhE&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=RGVwb3JUVkhE"
         ]
     },
@@ -150,7 +151,7 @@ const canales = [
         title: "NBA",
         imgSrc: "img/NBA.png",
         sources: [
-            "https://7tv.mitele.uno/cv2.php?get=TkJBX1RW&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=TkJBX1RW&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=TkJBX1RW"
         ]
     },
@@ -159,6 +160,7 @@ const canales = [
         imgSrc: "img/ESPN.webp",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=RVNQTjJIRA&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=RVNQTjJIRA&lang=1",
             "https://streamtp.live/global1.php?stream=espn1",
         ]
     },
@@ -166,6 +168,7 @@ const canales = [
         title: "ESPN2",
         imgSrc: "img/ESPN2.webp",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=RVNQTjJfQXJn&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=RVNQTjJfQXJn&lang=1",
             "https://streamtp.live/global1.php?stream=espn2"
         ]
@@ -174,6 +177,7 @@ const canales = [
         title: "ESPN3",
         imgSrc: "img/ESPN3.webp",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=RVNQTjM&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=RVNQTjM&lang=1",
             "https://streamtp.live/global1.php?stream=espn3"
         ]
@@ -182,6 +186,7 @@ const canales = [
         title: "ESPN4",
         imgSrc: "img/ESPN4.webp",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=RVNQTkhE&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=RVNQTkhE&lang=1",
             "https://streamtp.live/global1.php?stream=espn4"
         ]
@@ -190,6 +195,7 @@ const canales = [
         title: "ESPN5",
         imgSrc: "img/ESPN5.webp",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=RVNQTjQ=&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=RVNQTjQ=&lang=1",
             "https://streamtp.live/global1.php?stream=espn5"
         ]
@@ -198,6 +204,7 @@ const canales = [
         title: "ESPN6",
         imgSrc: "img/ESPN6.webp",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=Rm94U3BvcnRzM19VWQ==&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Rm94U3BvcnRzM19VWQ==&lang=1",
             "https://streamtp.live/global1.php?stream=espn6"
         ]
@@ -206,6 +213,7 @@ const canales = [
         title: "ESPN7",
         imgSrc: "img/ESPN7.png",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=Rm94U3BvcnRzMl9VWQ==&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Rm94U3BvcnRzMl9VWQ==&lang=1",
             "https://streamtp.live/global1.php?stream=espn7"
         ]
@@ -214,6 +222,7 @@ const canales = [
         title: "Espn Premium",
         imgSrc: "img/ESPNPremium.png",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
             "https://streamtp.live/global1.php?stream=espn_premium"
         ]
@@ -363,7 +372,7 @@ const canales = [
         ]
     },
     {
-        title: "Discovery Channel",
+        title: "Discovery World",
         imgSrc: "img/disworld.webp",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=RGlzY292ZXJ5X1dvcmxkX0hE",
@@ -498,6 +507,7 @@ const canales = [
         imgSrc: "img/StarChannel.svg.png",
         sources: [
             "https://7tv.mitele.uno/cv2.php?get=Rk9YSEQ=&lang=1",
+            "https://teve3.mitele.uno/cv2.php?get=Rk9YSEQ=&lang=1",
         ]
     },
     {
@@ -629,7 +639,9 @@ const canales = [
         title: "HBO Signature",
         imgSrc: "img/hbosignature.webp",
         sources: [
+            "https://clarovideo.nebunexa.co/?get=Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKEhCT19TSUdOQVRVUkVfSEQpL21hbmlmZXN0Lm1wZA==&key=ZTc5MGQyZmRkMWNiZmMzMWVjMDdjOWU2ZGUxYzU3Zjg=&key2=OWQyZWQzYmFkZDk3NjA3ZTRhZTBmODdjMDc4Y2RhMjc=",
             "https://7tv.mitele.uno/cv2.php?get=SEJPX1NpZ25hdHVyZQ==",
+            
         ]
     },
     {
@@ -671,13 +683,16 @@ const canales = [
         title: "Universal Premiere",
         imgSrc: "img/Universal_Premiere.svg",
         sources: [
+            "https://clarovideo.nebunexa.co/?get=aHR0cHM6Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKFVOSVZFUlNBTF9QUkVNSUVSX0hEKS9tYW5pZmVzdC5tcGQ=&key=ZDAxYzk0ODhlNTI4Njk3YTljZDhlYmUzNWIwNjc3Mjk=&key2=YWJiNGQwYWZmMDUyNDhhZTVlNTNkM2U4NDU0NjcxZDY=",
             "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1ByZW1pZXJl&lang=1",
-        ]
+            "https://teve3.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1ByZW1pZXJl&lang=1",
+            ]
     },
     {
         title: "Adult Swim",
         imgSrc: "img/adultswim.png",
         sources: [
+            "https://teve3.mitele.uno/cv2.php?get=QWR1bHRfU3dpbQ==&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QWR1bHRfU3dpbQ==&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=QWR1bHRfU3dpbQ==",
         ]
