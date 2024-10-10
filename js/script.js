@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoListContainer = document.getElementById('video-list');
     let mainVideo = document.querySelector('.main-video iframe');
     const title = document.querySelector('.main-video .title');
-    const sourceSelect = document.getElementById('sourceSelect');
     const container = document.querySelector('.container'); // Contenedor principal
     const videoList = document.querySelector('.video-list'); // Lista de canales
     let currentIndex = 0; // Índice del canal seleccionado actualmente
-    let channelSelected = false; // Para determinar si ya se seleccionó un canal
+    let channelSelected = false; // Estado para saber si ya se seleccionó un canal
+    let listVisible = false; // Estado para controlar si la lista está visible
 
     // Crear lista de videos a partir de canales.js
     canales.forEach((canal, index) => {
@@ -52,12 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
         container.classList.add('show-list');
         videoList.style.transform = 'translateX(0)';
         channelSelected = false; // Aún no se seleccionó un canal
+        listVisible = true; // Estado para indicar que la lista está visible
     }
 
     // Ocultar la lista de canales
     function hideChannelList() {
         container.classList.remove('show-list');
         videoList.style.transform = 'translateX(100%)';
+        listVisible = false; // Estado para indicar que la lista ya no está visible
+    }
+
+    // Forzar que siempre se oculte la lista cuando se presiona izquierda y esté visible
+    function forceHideChannelList() {
+        if (listVisible) {
+            hideChannelList();
+        }
     }
 
     // Maneja la navegación por la lista de canales con el teclado
@@ -68,30 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 showChannelList();
                 break;
             case 'ArrowLeft':
-                // Ocultar la lista de canales al presionar la flecha izquierda
-                if (channelSelected) {
-                    hideChannelList();
-                }
+                // Forzar ocultar la lista de canales al presionar la flecha izquierda
+                forceHideChannelList();
                 break;
             case 'ArrowDown':
                 // Moverse al siguiente canal si la lista de canales está visible
-                if (container.classList.contains('show-list') && currentIndex < listVideo.length - 1) {
+                if (listVisible && currentIndex < listVideo.length - 1) {
                     currentIndex++;
                     highlightChannel(currentIndex);
                 }
                 break;
             case 'ArrowUp':
                 // Moverse al canal anterior si la lista de canales está visible
-                if (container.classList.contains('show-list') && currentIndex > 0) {
+                if (listVisible && currentIndex > 0) {
                     currentIndex--;
                     highlightChannel(currentIndex);
                 }
                 break;
             case 'Enter':
                 // Reproducir el canal seleccionado al presionar "Enter"
-                if (container.classList.contains('show-list')) {
+                if (listVisible) {
                     listVideo[currentIndex].click(); // Simular clic en el canal seleccionado
                     channelSelected = true; // Se ha seleccionado un canal
+                    forceHideChannelList(); // Ocultar la lista después de seleccionar un canal
                 }
                 break;
             default:
