@@ -1,20 +1,67 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const videoListContainer = document.getElementById('video-list');
     let mainVideo = document.querySelector('.main-video iframe');
     const title = document.querySelector('.main-video .title');
-    const description = document.querySelector('.main-video .description');
     const sourceSelect = document.getElementById('sourceSelect');
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
+    const castButton = document.getElementById('castButton');
+    let currentSource = ''; // Guardamos la URL actual del video
 
+    // Inicializamos la API de Google Cast
+    function initializeCastApi() {
+        cast.framework.CastContext.getInstance().setOptions({
+            receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+            autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+        });
+    }
 
+    // Listener para detectar si el framework de Cast está disponible
+    window['__onGCastApiAvailable'] = function(isAvailable) {
+        if (isAvailable) {
+            initializeCastApi();
+        }
+    };
+
+    // Listener del botón de transmisión
+    castButton.addEventListener('click', () => {
+        const castSession = cast.framework.CastContext.getInstance().getCurrentSession();
+        if (castSession) {
+            const mediaInfo = new chrome.cast.media.MediaInfo(currentSource, 'video/mp4');
+            const request = new chrome.cast.media.LoadRequest(mediaInfo);
+
+            castSession.loadMedia(request).then(
+                () => {
+                    console.log('Media loaded successfully on Chromecast.');
+                },
+                (errorCode) => {
+                    console.log('Error loading media on Chromecast:', errorCode);
+                }
+            );
+        } else {
+            console.log('No cast session available.');
+        }
+    });
+
+    // Función que actualiza el iframe y prepara la URL para Chromecast
+    function changeIframeSource(source) {
+        currentSource = source;  // Guardamos la URL actual
+        const newIframe = document.createElement('iframe');
+        newIframe.id = 'reproductor';
+        newIframe.src = source;
+        newIframe.allow = 'autoplay; encrypted-media';
+        newIframe.allowFullscreen = true;
+
+        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
+        mainVideo = newIframe;
+    }
+
+    // Resto del código de inicialización del sitio
     canales.forEach((canal) => {
         const videoElement = document.createElement('div');
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
         videoElement.dataset.title = canal.title;
-        videoElement.dataset.description = canal.description; // Almacena la descripción en el dataset
 
         videoElement.innerHTML = `
             <img src="${canal.imgSrc}" alt="${canal.title}" />
@@ -35,9 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSourceOptions(sources);
             changeIframeSource(sources[0]);
             autoSelectAvailableSource(sources);
-            // Actualiza el título y la descripción en la sección principal
             title.textContent = video.dataset.title;
-            //description.textContent = video.dataset.description;
         });
     });
 
@@ -53,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const option = document.createElement('option');
                 option.value = source;
     
-                // Verifica si la URL contiene "https://streamtp.live/global1.php?stream="
                 if (source.includes("https://streamtp.live/global1.php?stream=")) {
                     option.textContent = `Opción ${index + 1} (Ads)`;
                 } else if (source.includes("https://la10hd.com/vivo/canales.php?stream=")) {
@@ -66,26 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
-function autoSelectAvailableSource(sources) {
-    const firstValidSource = sources.find(source => source !== "");
-    if (firstValidSource) {
-        changeIframeSource(firstValidSource);
-    }
-}
 
-    function changeIframeSource(source) {
-        const selectedSourceIndex = Array.from(sourceSelect.options).findIndex(option => option.value === source);
-
-        const newIframe = document.createElement('iframe');
-        newIframe.id = 'reproductor';
-        newIframe.src = source;
-        newIframe.allow = 'autoplay; encrypted-media';
-        newIframe.allowFullscreen = true;
-
-
-        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
-        mainVideo = newIframe;
+    function autoSelectAvailableSource(sources) {
+        const firstValidSource = sources.find(source => source !== "");
+        if (firstValidSource) {
+            changeIframeSource(firstValidSource);
+        }
     }
 
     searchBar.addEventListener('input', () => {
@@ -99,5 +129,4 @@ function autoSelectAvailableSource(sources) {
             }
         });
     });
-    
 });
