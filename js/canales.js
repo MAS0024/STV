@@ -639,9 +639,8 @@ const canales = [
         title: "HBO Signature",
         imgSrc: "img/hbosignature.webp",
         sources: [
-            "https://clarovideo.nebunexa.co/?get=Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKEhCT19TSUdOQVRVUkVfSEQpL21hbmlmZXN0Lm1wZA==&key=ZTc5MGQyZmRkMWNiZmMzMWVjMDdjOWU2ZGUxYzU3Zjg=&key2=OWQyZWQzYmFkZDk3NjA3ZTRhZTBmODdjMDc4Y2RhMjc=",
             "https://7tv.mitele.uno/cv2.php?get=SEJPX1NpZ25hdHVyZQ==",
-            
+            "https://clarovideo.nebunexa.co/?get=Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKEhCT19TSUdOQVRVUkVfSEQpL21hbmlmZXN0Lm1wZA==&key=ZTc5MGQyZmRkMWNiZmMzMWVjMDdjOWU2ZGUxYzU3Zjg=&key2=OWQyZWQzYmFkZDk3NjA3ZTRhZTBmODdjMDc4Y2RhMjc=",            
         ]
     },
     {
@@ -683,8 +682,8 @@ const canales = [
         title: "Universal Premiere",
         imgSrc: "img/Universal_Premiere.svg",
         sources: [
-            "https://clarovideo.nebunexa.co/?get=aHR0cHM6Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKFVOSVZFUlNBTF9QUkVNSUVSX0hEKS9tYW5pZmVzdC5tcGQ=&key=ZDAxYzk0ODhlNTI4Njk3YTljZDhlYmUzNWIwNjc3Mjk=&key2=YWJiNGQwYWZmMDUyNDhhZTVlNTNkM2U4NDU0NjcxZDY=",
             "https://7tv.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1ByZW1pZXJl&lang=1",
+            "https://clarovideo.nebunexa.co/?get=aHR0cHM6Ly9sYXRhbXZvc2xpdmVjbGFyb3ZpZGVvLmFrYW1haXplZC5uZXQvQ29udGVudC9EQVNIX0RBU0hfRksvTGl2ZS9DaGFubmVsKFVOSVZFUlNBTF9QUkVNSUVSX0hEKS9tYW5pZmVzdC5tcGQ=&key=ZDAxYzk0ODhlNTI4Njk3YTljZDhlYmUzNWIwNjc3Mjk=&key2=YWJiNGQwYWZmMDUyNDhhZTVlNTNkM2U4NDU0NjcxZDY=",
             "https://teve3.mitele.uno/cv2.php?get=VW5pdmVyc2FsX1ByZW1pZXJl&lang=1",
             ]
     },
