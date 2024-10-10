@@ -2,66 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoListContainer = document.getElementById('video-list');
     let mainVideo = document.querySelector('.main-video iframe');
     const title = document.querySelector('.main-video .title');
+    const description = document.querySelector('.main-video .description');
     const sourceSelect = document.getElementById('sourceSelect');
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
-    const castButton = document.getElementById('castButton');
-    let currentSource = ''; // Guardamos la URL actual del video
 
-    // Inicializamos la API de Google Cast
-    function initializeCastApi() {
-        cast.framework.CastContext.getInstance().setOptions({
-            receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
-            autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
-        });
-    }
-
-    // Listener para detectar si el framework de Cast está disponible
-    window['__onGCastApiAvailable'] = function(isAvailable) {
-        if (isAvailable) {
-            initializeCastApi();
-        }
-    };
-
-    // Listener del botón de transmisión
-    castButton.addEventListener('click', () => {
-        const castSession = cast.framework.CastContext.getInstance().getCurrentSession();
-        if (castSession) {
-            const mediaInfo = new chrome.cast.media.MediaInfo(currentSource, 'video/mp4');
-            const request = new chrome.cast.media.LoadRequest(mediaInfo);
-
-            castSession.loadMedia(request).then(
-                () => {
-                    console.log('Media loaded successfully on Chromecast.');
-                },
-                (errorCode) => {
-                    console.log('Error loading media on Chromecast:', errorCode);
-                }
-            );
-        } else {
-            console.log('No cast session available.');
-        }
-    });
-
-    // Función que actualiza el iframe y prepara la URL para Chromecast
-    function changeIframeSource(source) {
-        currentSource = source;  // Guardamos la URL actual
-        const newIframe = document.createElement('iframe');
-        newIframe.id = 'reproductor';
-        newIframe.src = source;
-        newIframe.allow = 'autoplay; encrypted-media';
-        newIframe.allowFullscreen = true;
-
-        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
-        mainVideo = newIframe;
-    }
-
-    // Resto del código de inicialización del sitio
+    // Crear lista de videos a partir de canales.js
     canales.forEach((canal) => {
         const videoElement = document.createElement('div');
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
         videoElement.dataset.title = canal.title;
+        videoElement.dataset.description = canal.description; // Almacena la descripción en el dataset
 
         videoElement.innerHTML = `
             <img src="${canal.imgSrc}" alt="${canal.title}" />
@@ -73,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const listVideo = document.querySelectorAll('.video-list .vid');
 
+    // Evento para cambiar de video al hacer clic en un canal
     listVideo.forEach(video => {
         video.addEventListener('click', () => {
             listVideo.forEach(vid => vid.classList.remove('active'));
@@ -82,22 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSourceOptions(sources);
             changeIframeSource(sources[0]);
             autoSelectAvailableSource(sources);
+
+            // Actualiza el título y la descripción en la sección principal
             title.textContent = video.dataset.title;
+            //description.textContent = video.dataset.description;
         });
     });
 
+    // Evento para cambiar la fuente de video
     changeSourceBtn.addEventListener('click', () => {
         const selectedSource = sourceSelect.value;
         changeIframeSource(selectedSource);
     });
 
+    // Actualiza las opciones de servidores de transmisión
     function updateSourceOptions(sources) {
         sourceSelect.innerHTML = '';
         sources.forEach((source, index) => {
             if (source) {
                 const option = document.createElement('option');
                 option.value = source;
-    
+
+                // Verifica si la URL contiene "https://streamtp.live/global1.php?stream="
                 if (source.includes("https://streamtp.live/global1.php?stream=")) {
                     option.textContent = `Opción ${index + 1} (Ads)`;
                 } else if (source.includes("https://la10hd.com/vivo/canales.php?stream=")) {
@@ -105,12 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     option.textContent = `Opción ${index + 1}`;
                 }
-    
+
                 sourceSelect.appendChild(option);
             }
         });
     }
 
+    // Selecciona automáticamente la primera fuente válida
     function autoSelectAvailableSource(sources) {
         const firstValidSource = sources.find(source => source !== "");
         if (firstValidSource) {
@@ -118,6 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Cambia la fuente del iframe de video
+    function changeIframeSource(source) {
+        const newIframe = document.createElement('iframe');
+        newIframe.id = 'reproductor';
+        newIframe.src = source;
+        newIframe.allow = 'autoplay; encrypted-media';
+        newIframe.allowFullscreen = true;
+
+        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
+        mainVideo = newIframe;
+    }
+
+    // Funcionalidad de búsqueda en la lista de videos
     searchBar.addEventListener('input', () => {
         const searchTerm = searchBar.value.toLowerCase();
         listVideo.forEach(video => {
@@ -129,4 +102,53 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ---- INTEGRACIÓN DE CHROMECAST ----
+
+    // Espera a que la API de Cast esté disponible
+    window['__onGCastApiAvailable'] = function(isAvailable) {
+        if (isAvailable) {
+            initializeCastApi();
+        }
+    };
+
+    // Inicializa la API de Cast
+    function initializeCastApi() {
+        const castContext = cast.framework.CastContext.getInstance();
+        castContext.setOptions({
+            receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+            autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+        });
+    }
+
+    // Maneja el evento de hacer clic en el ícono de Chromecast
+    document.getElementById('castButton').addEventListener('click', () => {
+        const castSession = cast.framework.CastContext.getInstance().getCurrentSession();
+
+        if (castSession) {
+            loadMedia(castSession);
+        } else {
+            cast.framework.CastContext.getInstance().requestSession().then(() => {
+                const session = cast.framework.CastContext.getInstance().getCurrentSession();
+                loadMedia(session);
+            });
+        }
+    });
+
+    // Función para cargar el video actual en Chromecast
+    function loadMedia(session) {
+        const videoUrl = mainVideo.src; // URL del video actual en el iframe
+
+        const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, 'video/mp4'); // Ajusta el tipo MIME según el contenido
+        const request = new chrome.cast.media.LoadRequest(mediaInfo);
+
+        session.loadMedia(request).then(
+            function() {
+                console.log('Transmitiendo el video a Chromecast');
+            },
+            function(errorCode) {
+                console.log('Error al transmitir: ' + errorCode);
+            }
+        );
+    }
 });
