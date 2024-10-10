@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sourceSelect = document.getElementById('sourceSelect');
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
-    
+
     let currentIndex = 0; // Índice del canal seleccionado actualmente
     const container = document.querySelector('.container'); // Contenedor principal
     const videoList = document.querySelector('.video-list'); // Lista de canales
@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
         videoElement.dataset.title = canal.title;
-        videoElement.dataset.description = canal.description; // Almacena la descripción en el dataset
+        videoElement.dataset.description = canal.description;
+        videoElement.tabIndex = 0; // Permite que los elementos reciban foco en TV
 
         videoElement.innerHTML = `
             <img src="${canal.imgSrc}" alt="${canal.title}" />
