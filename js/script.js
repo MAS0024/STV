@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Inicializa la API de Cast
+    // Inicializa la API de Google Cast
     function initializeCastApi() {
         const castContext = cast.framework.CastContext.getInstance();
         castContext.setOptions({
@@ -135,19 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Función para cargar el video actual en Chromecast
+    // Carga el video actual en Chromecast
     function loadMedia(session) {
-        const videoUrl = mainVideo.src; // URL del video actual en el iframe
-
-        const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, 'video/mp4'); // Ajusta el tipo MIME según el contenido
+        const videoUrl = mainVideo.src; // Obtiene la URL actual del iframe
+        const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, 'video/mp4');
         const request = new chrome.cast.media.LoadRequest(mediaInfo);
 
         session.loadMedia(request).then(
             function() {
-                console.log('Transmitiendo el video a Chromecast');
+                console.log('Transmisión iniciada en Chromecast');
             },
             function(errorCode) {
-                console.log('Error al transmitir: ' + errorCode);
+                console.error('Error al iniciar la transmisión en Chromecast: ', errorCode);
             }
         );
     }
