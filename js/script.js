@@ -108,9 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Espera a que la API de Cast esté disponible
     window['__onGCastApiAvailable'] = function(isAvailable) {
         if (isAvailable) {
+            console.log("API de Chromecast disponible");
             initializeCastApi();
+        } else {
+            console.log("API de Chromecast no disponible");
         }
     };
+    
 
     // Inicializa la API de Google Cast
     function initializeCastApi() {
@@ -120,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
         });
     }
+    
 
     // Maneja el evento de hacer clic en el ícono de Chromecast
     document.getElementById('castButton').addEventListener('click', () => {
@@ -151,3 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 });
+
+cast.framework.CastContext.getInstance().addEventListener(
+    cast.framework.CastContextEventType.CAST_STATE_CHANGED,
+    function(event) {
+        if (event.castState === cast.framework.CastState.CONNECTED) {
+            console.log("Conectado a un dispositivo Chromecast");
+        } else if (event.castState === cast.framework.CastState.NOT_CONNECTED) {
+            console.log("No se encontró ningún dispositivo Chromecast");
+        }
+    }
+);
