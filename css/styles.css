@@ -136,6 +136,12 @@ body.dark-mode .video-list {
     color: #fff;
 }
 
+.video-list .vid.active {
+    border: 2px solid #007bff;
+    background-color: #f0f0f0;
+}
+
+
 .video-list .search-bar {
     width: 100%;
     padding: 10px;

@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const sourceSelect = document.getElementById('sourceSelect');
     const changeSourceBtn = document.getElementById('changeSourceBtn');
     const searchBar = document.getElementById('search');
+    
+    let currentIndex = 0; // Índice del canal seleccionado actualmente
 
     // Crear lista de videos a partir de canales.js
-    canales.forEach((canal) => {
+    canales.forEach((canal, index) => {
         const videoElement = document.createElement('div');
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
@@ -24,6 +26,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const listVideo = document.querySelectorAll('.video-list .vid');
+
+    // Resaltar el primer canal inicialmente
+    listVideo[currentIndex].classList.add('active');
+
+    // Función para cambiar el canal resaltado
+    function highlightChannel(index) {
+        // Remueve la clase 'active' de todos los canales
+        listVideo.forEach(video => video.classList.remove('active'));
+        // Añade la clase 'active' al canal seleccionado
+        listVideo[index].classList.add('active');
+        // Asegúrate de que el canal esté visible en la lista
+        listVideo[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Maneja la navegación por la lista de canales con el teclado
+    document.addEventListener('keydown', (event) => {
+        switch (event.key) {
+            case 'ArrowDown':
+                // Moverse al siguiente canal
+                if (currentIndex < listVideo.length - 1) {
+                    currentIndex++;
+                    highlightChannel(currentIndex);
+                }
+                break;
+            case 'ArrowUp':
+                // Moverse al canal anterior
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    highlightChannel(currentIndex);
+                }
+                break;
+            case 'Enter':
+                // Simular clic en el canal seleccionado
+                listVideo[currentIndex].click();
+                break;
+            default:
+                break;
+        }
+    });
 
     // Evento para cambiar de video al hacer clic en un canal
     listVideo.forEach(video => {
@@ -102,68 +143,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // ---- INTEGRACIÓN DE CHROMECAST ----
-
-    // Espera a que la API de Cast esté disponible
-    window['__onGCastApiAvailable'] = function(isAvailable) {
-        if (isAvailable) {
-            console.log("API de Chromecast disponible");
-            initializeCastApi();
-        } else {
-            console.log("API de Chromecast no disponible");
-        }
-    };
-    
-
-    // Inicializa la API de Google Cast
-    function initializeCastApi() {
-        const castContext = cast.framework.CastContext.getInstance();
-        castContext.setOptions({
-            receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
-            autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
-        });
-    }
-    
-
-    // Maneja el evento de hacer clic en el ícono de Chromecast
-    document.getElementById('castButton').addEventListener('click', () => {
-        const castSession = cast.framework.CastContext.getInstance().getCurrentSession();
-
-        if (castSession) {
-            loadMedia(castSession);
-        } else {
-            cast.framework.CastContext.getInstance().requestSession().then(() => {
-                const session = cast.framework.CastContext.getInstance().getCurrentSession();
-                loadMedia(session);
-            });
-        }
-    });
-
-    // Carga el video actual en Chromecast
-    function loadMedia(session) {
-        const videoUrl = mainVideo.src; // Obtiene la URL actual del iframe
-        const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, 'video/mp4');
-        const request = new chrome.cast.media.LoadRequest(mediaInfo);
-
-        session.loadMedia(request).then(
-            function() {
-                console.log('Transmisión iniciada en Chromecast');
-            },
-            function(errorCode) {
-                console.error('Error al iniciar la transmisión en Chromecast: ', errorCode);
-            }
-        );
-    }
 });
-
-cast.framework.CastContext.getInstance().addEventListener(
-    cast.framework.CastContextEventType.CAST_STATE_CHANGED,
-    function(event) {
-        if (event.castState === cast.framework.CastState.CONNECTED) {
-            console.log("Conectado a un dispositivo Chromecast");
-        } else if (event.castState === cast.framework.CastState.NOT_CONNECTED) {
-            console.log("No se encontró ningún dispositivo Chromecast");
-        }
-    }
-);
