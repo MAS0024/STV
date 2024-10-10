@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('search');
     
     let currentIndex = 0; // Índice del canal seleccionado actualmente
-
+    const container = document.querySelector('.container'); // Contenedor principal
+    const videoList = document.querySelector('.video-list'); // Lista de canales
+    
     // Crear lista de videos a partir de canales.js
     canales.forEach((canal, index) => {
         const videoElement = document.createElement('div');
@@ -56,6 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentIndex--;
                     highlightChannel(currentIndex);
                 }
+                break;
+            case 'ArrowRight':
+                // Mostrar la lista de canales al presionar la flecha derecha
+                container.classList.add('show-list');
+                videoList.style.transform = 'translateX(0)';
+                break;
+            case 'ArrowLeft':
+                // Ocultar la lista de canales al presionar la flecha izquierda
+                container.classList.remove('show-list');
+                videoList.style.transform = 'translateX(100%)'; // Empuja la lista fuera de la pantalla
                 break;
             case 'Enter':
                 // Simular clic en el canal seleccionado
