@@ -4,29 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STVLibre</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="/img/ico.ico" type="image/x-icon">
 </head>
 <body class="light-mode">
     <nav>
         <a href="#" class="logo">STVLibre</a>
-
         <i id="toggleDark" class="bi bi-brightness-high"></i>
-       
     </nav>   
-    
-    
+    <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
     <div class="container">
         
         <div class="main-video">
             <div class="video">
-                <i id="toggleListBtn" class="bi bi-list" style="font-size: 2rem; cursor: pointer;"></i>
                 <iframe id="reproductor" 
                         allowfullscreen
                         sandbox="allow-same-origin allow-scripts allow-popups-to-escape-sandbox">
-                        </iframe>   
-                    
+                        </iframe>               
                 <h3 class="title">Selecciona el canal:</h3> 
                 <!-- <p class="description">Descripcion</p> -->
             </div>
@@ -37,11 +32,11 @@
             </div>
         </div>       
         <div class="video-list" id="video-list"> 
-            <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
+                
         </div>
     </div>
 
-    <!--<footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-logo">
                 <a href="#" class="logo">STVLibre</a>
@@ -51,23 +46,9 @@
             <p>STVLibre. v1.24</p>
         </div>
         <button class="btn" onclick="window.open('https://chrome.google.com/webstore/detail/opmeopcambhfimffbomjgemehjkbbmji', '_blank')">Descargar Extension (Solo Ordenador)</button>
-    </footer>-->
+    </footer>
     <script src="js/canales.js"></script>
     <script src="js/script.js"></script>
     <script src="js/mode.js"></script>
-    <script>
-        const toggleListBtn = document.getElementById('toggleListBtn');
-        const container = document.querySelector('.container');
-        const videoList = document.querySelector('.video-list');
-    
-        toggleListBtn.addEventListener('click', () => {
-            // Alterna la clase 'show-list' en el contenedor
-            container.classList.toggle('show-list');
-        });
-    </script>
-    
-    
-    
-    
 </body>
 </html>
