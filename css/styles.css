@@ -1,4 +1,4 @@
-/* Configuración general */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@
 body {
     background-color: #000;
     background-size: 400% 400%;
-    animation: gradientAnimation 50s ease infinite; /* Animación infinita */
+    animation: gradientAnimation 50s ease infinite;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -18,7 +18,7 @@ body {
     overflow: hidden;
 }
 
-/* Animación de degradado 
+/*
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -32,35 +32,34 @@ body {
 }*/
 
 
-/* Contenedor principal */
+
 .container {
     display: flex;
 
 }
 
-/* Estilo del iframe para ocupar todo el espacio */
 .main-video {
 width: 100%;
 }
 
-/* Estilo del iframe */
+
 .main-video iframe {
-    position: absolute; /* Posiciona el iframe de forma absoluta */
-    top: 50%; /* Mueve el iframe al 50% desde la parte superior */
-    left: 50%; /* Mueve el iframe al 50% desde la izquierda */
-    transform: translate(-50%, -50%); /* Lo centra en su propio centro */
-    width: 83%; /* Mantiene el ancho que mencionaste que es perfecto */
-    height: 100vh; /* Mantiene la altura del iframe */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 83%; 
+    height: 100vh; 
     border: none;
     box-shadow: 0px 0px 500px #242424;
 }
 
 
 #reload-btn {
-    position: absolute; /* Posiciona el botón de forma absoluta dentro del contenedor */
-    top: 20px; /* Coloca el botón 10px por debajo del borde superior del contenedor */
-    left: 10px; /* Coloca el botón 10px hacia la derecha del borde izquierdo del contenedor */
-    z-index: 10; /* Asegura que el botón esté por encima del iframe */
+    position: absolute; 
+    top: 20px; 
+    left: 10px; 
+    z-index: 10; 
     background-color: #313131;
     color: white;
     border: none;
@@ -101,42 +100,41 @@ width: 100%;
     visibility: visible;
 }
 
-/* Lista de canales que aparece y desaparece */
 .video-list {
     position: fixed;
-    right: -250px; /* Oculta la lista fuera de la pantalla */
-    top: 10%; /* Posiciona el top al 50% del viewport */
-    transform: translateY(-50%); /* Centra verticalmente la lista */
+    right: -250px; 
+    top: 10%; 
+    transform: translateY(-50%); 
     width: 350px;
-    height: 80%; /* Cambia la altura según tu preferencia */
-    background-color: rgba(20, 20, 20, 0.95); /* Fondo más elegante y oscuro */
+    height: 80%; 
+    background-color: rgba(20, 20, 20, 0.95);
     padding: 20px;
     border-radius: 10px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
-    z-index: 999; /* Asegura que esté por encima del iframe */
+    z-index: 999; 
     /*transition: right 0.4s ease, left 0.4s, opacity 0.4s ease; /* Animación al mostrar/ocultar */
-    overflow-y: auto; /* Permitir scroll si la lista es larga */
-    opacity: 0; /* La lista está invisible inicialmente */
+    overflow-y: auto; 
+    opacity: 0; 
 }
 
 
 .container.show-list .video-list {
     right: 0;
     opacity: 1;
-    visibility: visible; /* Hace que la lista sea visible */
+    visibility: visible; 
    /* transition: right 0.4s ease, opacity 0.4s ease; /* Transición para aparecer */
 }
 
-/* Cuando la lista desaparece */
+
 .container.hide-list .video-list {
     right: -350px;
     opacity: 0;
-    visibility: hidden; /* Oculta la lista gradualmente */
+    visibility: hidden;
    /* transition: right 0.4s ease, opacity 0.4s ease; /* Transición para desaparecer */
 }
 
 
-/* Estilo de los canales en la lista */
+
 .video-list h3 {
     margin-bottom: 20px;
     text-align: center;
@@ -172,9 +170,9 @@ width: 100%;
 
 
 .vid:hover {
-    background-color: #444; /* Cambia el color al hacer hover */
-    transform: translateY(-5px); /* Efecto de levantamiento */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    background-color: #444; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
 }
 
 .vid h4 {
@@ -184,20 +182,19 @@ width: 100%;
 }
 
 .vid:hover img, .vid:focus img {
-    transform: scale(1.1); /* Efecto de zoom en la imagen */
+    transform: scale(1.1); 
 }
 
-/* Estado cuando el canal está seleccionado */
+
 .vid.active {
-    background-color: #007bff; /* Cambia a un azul cuando esté seleccionado */
-    color: #fff; /* El texto cambia a blanco */
-    transform: translateY(0); /* Elimina el levantamiento */
-    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); /* Sombra azul más pronunciada */
+    background-color: #007bff; 
+    color: #fff;
+    transform: translateY(0); 
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); 
 }
 
-/* Cambiar el color del título cuando esté seleccionado */
 .vid.active h4 {
-    color: #fff; /* Texto en blanco cuando está seleccionado */
+    color: #fff; 
 }
 
 .video-list::-webkit-scrollbar {
@@ -211,4 +208,12 @@ width: 100%;
 .video-list::-webkit-scrollbar-thumb {
     background-color: #555;
     border-radius: 10px;
+}
+
+@media (max-width: 768px)  { 
+    .main-video iframe {  
+        width: 100%; 
+        height: 260px;
+    }
+    
 }
