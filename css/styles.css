@@ -61,22 +61,27 @@ body {
 }
 
 /* Ícono para abrir/cerrar la lista de canales */
-#toggleListBtn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(0, 0, 0, 0.7);
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
     color: white;
+    border: none;
     padding: 10px;
-    border-radius: 50%;
-    font-size: 2rem;
     cursor: pointer;
-    z-index: 2; /* Asegura que esté por encima del iframe */
-    transition: background-color 0.3s ease;
+    font-size: 24px;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
-#toggleListBtn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+.toggle-btn:hover {
+    background-color: #555;
+}
+.video-list.open {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Lista de canales que aparece y desaparece */

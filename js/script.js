@@ -70,6 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Nueva función para el botón que alterna la visibilidad de la lista
+    const toggleButton = document.getElementById('toggle-list-btn');
+    toggleButton.addEventListener('click', () => {
+        if (listVisible) {
+            hideChannelList();
+        } else {
+            showChannelList();
+        }
+    });
+
     // Maneja la navegación por la lista de canales con el teclado
     document.addEventListener('keydown', (event) => {
         switch (event.key) {
