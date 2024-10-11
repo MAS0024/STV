@@ -1,314 +1,180 @@
-/* Global Styles */
+/* Configuración general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Fondo animado con degradado */
 body {
+    background: linear-gradient(90deg, #000000, #202020, #2b2b2b, #000000, #000000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 50s ease infinite; /* Animación infinita */
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-.alternative-sources select {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-body.light-mode {
-    background: #f0f0f0;
-    color: #000;
-}
-
-body.dark-mode {
-    background: #121212;
-    color: #fff;
-}
-
-/* Navigation Styles */
-nav {
-    width: 100%;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-}
-
-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-}
-
-#toggleDark {
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
-
-/* Main Container */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: calc(100vh - 60px);
-    padding: 20px;
-    position: relative;
-}
-
-.main-video {
+    padding: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Animación de degradado */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Asegura que ocupe toda la pantalla */
     position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del iframe para ocupar todo el espacio */
+.main-video {
+    position: relative;
+    width: 80%;
+    height: 100%;
 }
 
 .main-video iframe {
     width: 100%;
-    height: 80vh;
-    border-radius: 10px;
+    height: 100vh;
     border: none;
-    transition: width 0.3s ease, height 0.3s ease;
+    border-radius: 20px;
+    background-color: #000;
+    box-shadow: 0px 0px 150px #000000;
+    position: relative;
+    z-index: 1; /* Asegura que el iframe esté debajo del ícono de la lista */
 }
 
-/* Channel List (Video List) */
-.video-list {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    background-color: #333;
-    padding: 20px;
-    overflow-y: auto;
-    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    transform: translateX(100%); /* Empuja la lista fuera de la pantalla */
-    opacity: 0; /* La lista es invisible inicialmente */
-    transition: transform 0.4s ease, opacity 0.4s ease; /* Animación suave */
-}
-
-body.light-mode .video-list {
-    background-color: #f0f0f0;
-    color: #000;
-}
-
-body.dark-mode .video-list {
-    background-color: #121212;
-    color: #fff;
-}
-
-.video-list .vid {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    background-color: #444;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-
-.video-list .vid:hover {
-    background-color: #555;
-}
-
-.video-list img {
-    width: 80px;
-    height: 60px;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.video-list .title {
-    font-size: 16px;
-    color: #fff;
-}
-
-.video-list .vid.active {
-    border: 2px solid #007bff;
-    background-color: #f0f0f0;
-}
-
-
-.video-list .search-bar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-
-body.light-mode .video-list .title {
-    color: #000;
-}
-
-
-/* Show/Hide Channel List */
-.container.show-list .video-list {
-    transform: translateX(0); /* La lista entra completamente a la vista */
-    opacity: 1; /* La lista se vuelve completamente visible */
-}
-
-.container.show-list .main-video iframe {
-    width: calc(100% - 320px);
-}
-
-/* Button to Show/Hide Channel List */
+/* Ícono para abrir/cerrar la lista de canales */
 #toggleListBtn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #007bff;
-    color: #fff;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
     padding: 10px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000; /* Para que esté por encima del reproductor */
+    z-index: 2; /* Asegura que esté por encima del iframe */
+    transition: background-color 0.3s ease;
 }
 
 #toggleListBtn:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Estilos del reproductor cuando la lista está abierta */
-.container.show-list .main-video iframe {
-    width: calc(100% - 320px);
+/* Lista de canales que aparece y desaparece */
+.video-list {
+    position: fixed;
+    right: -250px; /* Oculta la lista fuera de la pantalla */
+    top: 10%; /* Posiciona el top al 50% del viewport */
+    transform: translateY(-50%); /* Centra verticalmente la lista */
+    width: 350px;
+    height: 80%; /* Cambia la altura según tu preferencia */
+    background-color: rgba(20, 20, 20, 0.95); /* Fondo más elegante y oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    z-index: 999; /* Asegura que esté por encima del iframe */
+    transition: right 0.4s ease, left 0.4s, opacity 0.4s ease; /* Animación al mostrar/ocultar */
+    overflow-y: auto; /* Permitir scroll si la lista es larga */
+    opacity: 0; /* La lista está invisible inicialmente */
 }
-#changeSourceBtn {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+
+
+.container.show-list .video-list {
+    right: 0;
+    opacity: 1; /* Hacemos visible la lista */
+}
+
+
+/* Estilo de los canales en la lista */
+.video-list h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f0f0f0;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.vid {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #333;
+    margin-bottom: 15px;
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#changeSourceBtn:hover {
-    background-color: #218838;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+.vid img {
+    width: 100px;
+    height: 45px;
+    margin-right: 15px;
 }
+
+
+
+.vid:hover {
+    background-color: #444; /* Cambia el color al hacer hover */
+    transform: translateY(-5px); /* Efecto de levantamiento */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+.vid h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.vid:hover img, .vid:focus img {
+    transform: scale(1.1); /* Efecto de zoom en la imagen */
+}
+
+/* Estado cuando el canal está seleccionado */
+.vid.active {
+    background-color: #007bff; /* Cambia a un azul cuando esté seleccionado */
+    color: #fff; /* El texto cambia a blanco */
+    transform: translateY(0); /* Elimina el levantamiento */
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); /* Sombra azul más pronunciada */
+}
+
+/* Cambiar el color del título cuando esté seleccionado */
+.vid.active h4 {
+    color: #fff; /* Texto en blanco cuando está seleccionado */
+}
+
 .video-list::-webkit-scrollbar {
     width: 8px;
 }
 
 .video-list::-webkit-scrollbar-track {
-    background: #ccc;
-    border-radius: 50px;
+    background-color: #222;
 }
 
 .video-list::-webkit-scrollbar-thumb {
-    background: #666;
-    border-radius: 50px;
-}
-
-footer {
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    box-shadow: 0px -8px 12px;
-}
-
-.light-mode footer {
-    background-color: #d3d3d3;
-    color: #000000;
-    box-shadow: 0px -8px 12px #d3d3d3;
-}
-
-.dark-mode footer {
-    background-color: #141414;
-    color: #ffffff;
-    box-shadow: 0px -8px 12px #080808;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.footer-bottom {
-    display: grid;
-    text-align: center;
-    margin-top: 10px;
-    padding: 10px 0;
-    border-top: 1px solid #3d3d3d;
-    box-sizing: border-box;
-}
-
-.light-mode .footer-logo .logo {
-    font-size: 1.5em;
-    color: #000000;
-    text-decoration: none;
-}
-
-.dark-mode .footer-logo .logo {
-    font-size: 1.5em;
-    color: #ffffff;
-    text-decoration: none;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-video iframe {
-        height: 60vh;
-    }
-
-    .video-list {
-        width: 100%;
-        right: -100%;
-    }
-
-    .container.show-list .video-list {
-        right: 0;
-    }
-
-    .container.show-list .main-video iframe {
-        width: 100%;
-        height: 50vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-video iframe {
-        height: 25vh;
-    }
-
-    .container.show-list .main-video iframe {
-        height: 40vh;
-    }
-    footer {
-        padding: 5px 0;
-    }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-bottom {
-        margin-top: 15px;
-    }
+    background-color: #555;
+    border-radius: 10px;
 }
