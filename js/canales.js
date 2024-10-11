@@ -527,7 +527,7 @@ const canales = [
         title: "Studio Universal",
         imgSrc: "img/StudioUniversal.png",
         sources: [
-            "https://teve3.mitele.uno/cv2.php?get=",
+            "https://teve3.mitele.uno/cv2.php?get=U3R1ZGlvX1VuaXZlcnNhbA==&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=U3R1ZGlvX1VuaXZlcnNhbA==&lang=1",
         ]
     },
@@ -535,7 +535,7 @@ const canales = [
         title: "Sony Channel",
         imgSrc: "img/SonyChannel.png",
         sources: [
-            "https://teve3.mitele.uno/cv2.php?get=",
+            "https://teve3.mitele.uno/cv2.php?get=U29ueUhE&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=U29ueUhE&lang=1",
         ]
     },
@@ -543,7 +543,7 @@ const canales = [
         title: "Paramount Network",
         imgSrc: "img/Paramount_Network.svg",
         sources: [
-            "https://teve3.mitele.uno/cv2.php?get=",
+            "https://teve3.mitele.uno/cv2.php?get=UGFyYW1vdW50&lang=1",
             "https://7tv.mitele.uno/cv2.php?get=UGFyYW1vdW50&lang=1",
         ]
     },
@@ -551,7 +551,7 @@ const canales = [
         title: "Warner Channel",
         imgSrc: "img/Warner.png",
         sources: [
-            "https://teve3.mitele.uno/cv2.php?get=",
+            "https://teve3.mitele.uno/cv2.php?get=V2FybmVySEQ=",
             "https://7tv.mitele.uno/cv2.php?get=V2FybmVySEQ="
 
         ]

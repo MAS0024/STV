@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STVLibre</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="/img/ico.ico" type="image/x-icon">
 </head>
@@ -14,14 +15,18 @@
             
             &#9776; <!-- Este es el icono de "hamburguesa" (☰) para el menú -->
         </button>
+        
         <div class="main-video">
+            
             <div class="video">
-                
+               
                 <iframe id="reproductor" 
                         allowfullscreen
                         sandbox="allow-same-origin allow-scripts allow-popups-to-escape-sandbox">
                         </iframe>   
-                    
+                        <button id="reload-btn">
+                            <i class="fas fa-redo"></i>
+                        </button>
                 <h3 class="title">Selecciona el canal:</h3> 
             </div>
         </div>       
