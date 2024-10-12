@@ -8,7 +8,7 @@
 
 /* Fondo animado con degradado  background: linear-gradient(90deg, #000000, #202020, #2b2b2b, #000000, #000000);*/
 body {
-    background-color: #000;
+ background: linear-gradient(to right, #030b17 80%, #0c111b00);
     background-size: 400% 400%;
     animation: gradientAnimation 50s ease infinite;
     margin: 0;
@@ -51,7 +51,7 @@ width: 100%;
     width: 83%; 
     height: 100vh; 
     border: none;
-    box-shadow: 0px 0px 500px #242424;
+    box-shadow: 0px 0px 100px #030b17;
 }
 
 
@@ -79,20 +79,23 @@ width: 100%;
 /* Ícono para abrir/cerrar la lista de canales */
 .toggle-btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #333;
+    opacity: 50%;
+    top: 20px; 
+    right: 10px; 
+    background-color: #313131;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 16px;
     border-radius: 5px;
     z-index: 1000;
 }
 
 .toggle-btn:hover {
-    background-color: #555;
+    background-color: #313131;
+    opacity: 100%;
+    transition: 0.3s;
 }
 .video-list.open {
     right: 0;
@@ -171,7 +174,6 @@ width: 100%;
 
 .vid:hover {
     background-color: #444; 
-    transform: translateY(-5px); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
 }
 
@@ -181,18 +183,17 @@ width: 100%;
     color: #fff;
 }
 
-.vid:hover img, .vid:focus img {
-    transform: scale(1.1); 
-}
-
 
 .vid.active {
-    background-color: #007bff; 
+    background-color: #0b183100; 
     color: #fff;
     transform: translateY(0); 
-    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); 
+    box-shadow: 0 0px 16px rgba(209, 213, 218, 0.3); 
 }
 
+.vid.active img{
+    filter: drop-shadow(0px 0px 5px rgb(206, 206, 206))
+}
 .vid.active h4 {
     color: #fff; 
 }

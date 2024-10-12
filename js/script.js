@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'ArrowLeft':
                 forceHideChannelList();
                 break;
+            case 'Escape':
+                forceHideChannelList();
+                break;
             case 'ArrowDown':
                 if (listVisible && currentIndex < listVideo.length - 1) {
                     currentIndex++;
