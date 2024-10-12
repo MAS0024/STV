@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector('.main-video .title');
     const container = document.querySelector('.container');
     const videoList = document.querySelector('.video-list');
+    const serverSelect = document.getElementById('server-select'); // Selector de servidor
     let currentIndex = 0;
     let channelSelected = false;
     let listVisible = false;
+    let currentSources = []; // Fuentes actuales del canal
 
     // Crear lista de videos a partir de canales.js
     canales.forEach((canal, index) => {
@@ -14,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.classList.add('vid');
         videoElement.dataset.sources = JSON.stringify(canal.sources);
         videoElement.dataset.title = canal.title;
-        videoElement.dataset.description = canal.description;
-        videoElement.tabIndex = 0;
 
         videoElement.innerHTML = `
             <img src="${canal.imgSrc}" alt="${canal.title}" />
@@ -32,9 +32,53 @@ document.addEventListener('DOMContentLoaded', () => {
         const initialChannel = canales[0].sources[0];
         changeIframeSource(initialChannel);
         title.textContent = canales[0].title;
+        populateServerSelect(canales[0].sources);
     }
 
     loadInitialChannel();
+
+    // Función para cambiar la fuente del iframe de video
+    function changeIframeSource(source) {
+        const newIframe = document.createElement('iframe');
+        newIframe.id = 'reproductor';
+        newIframe.src = source;
+        newIframe.allow = 'autoplay; encrypted-media';
+        newIframe.allowFullscreen = true;
+
+        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
+        mainVideo = newIframe;
+    }
+
+    // Función para llenar el select con los servidores, con indicación de anuncios
+    function populateServerSelect(sources) {
+        serverSelect.innerHTML = ''; // Limpia las opciones
+        currentSources = sources; // Almacena las fuentes actuales
+
+        sources.forEach((source, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+
+            // Verifica si la URL contiene 'streamtp.live' para agregar "(ads)"
+            if (source.includes('streamtp.live')) {
+                option.textContent = `Op ${index + 1}.ads`;
+            }
+            else if(source.includes('la10hd.com')) {
+                option.textContent = `Op ${index + 1}.ads`;
+            }
+             else {
+                option.textContent = `Op ${index + 1}`;
+            }
+
+            serverSelect.appendChild(option);
+        });
+    }
+
+    // Cambia la URL del iframe cuando se selecciona un servidor
+    serverSelect.addEventListener('change', (event) => {
+        const selectedSourceIndex = event.target.value;
+        const selectedSource = currentSources[selectedSourceIndex];
+        changeIframeSource(selectedSource);
+    });
 
     // Función para cambiar el canal resaltado
     function highlightChannel(index) {
@@ -117,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             changeIframeSource(sources[0]);
             title.textContent = video.dataset.title;
             currentIndex = index;
+            populateServerSelect(sources); // Actualiza el selector de servidores
         });
     });
 
@@ -127,16 +172,4 @@ document.addEventListener('DOMContentLoaded', () => {
         mainVideo.src = ''; // Limpia el iframe temporalmente
         mainVideo.src = currentSrc; // Recarga el iframe con la misma URL
     });
-
-    // Cambia la fuente del iframe de video
-    function changeIframeSource(source) {
-        const newIframe = document.createElement('iframe');
-        newIframe.id = 'reproductor';
-        newIframe.src = source;
-        newIframe.allow = 'autoplay; encrypted-media';
-        newIframe.allowFullscreen = true;
-
-        mainVideo.parentNode.replaceChild(newIframe, mainVideo);
-        mainVideo = newIframe;
-    }
 });
