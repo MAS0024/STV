@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="icon" href="/img/ico.ico" type="image/x-icon">
+    <link rel="icon" href="/img/Ico.ico" type="image/x-icon">
 </head>
 <body class="light-mode">
     <div class="container">
@@ -33,9 +33,28 @@
         </div>
     </div>
 
+    <button id="openModal" class="buttonmodal"><i class="bi bi-app-indicator"></i></button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="content">
+                <div class="item">
+                    <img src="https://lh3.googleusercontent.com/uaAjE5xKrl_5SanqPi-zkvU5T7JQezzuBhMRZjZ2cb0fOUDcHdpq6WQP19OESoXQnWHSBg8y5FAiDyv0TfEiAsFGmA=s60" alt="Imagen 1">
+                    <p>Bloqueador de ventanas</p>
+                    <button class="buttonExt" onclick="window.open('https://chromewebstore.google.com/detail/popup-blocker-strict/aefkmifgmaafnojlojpnekbpbmjiiogg', '_blank');">Descargar Extension</button>
+                </div>
+                <div class="item">
+                    <img src="https://lh3.googleusercontent.com/CpjFFK0vJQElr4Xo1TAzovP8tCzedGN0h5uzSthqCaRQXlDvU6kIrIc4QTm1sPrxlD29NWLqfT_srE6MK5j7Iy9wkg=s60" alt="Imagen 2">
+                    <p>VideoPlayer</p>
+                    <button class="buttonExt" onclick="window.open('https://chromewebstore.google.com/detail/videoplayer-mpdm3u8m3uepg/opmeopcambhfimffbomjgemehjkbbmji', '_blank');">Descargar Extension</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/canales.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/mode.js"></script>
+
     <script>
         const toggleListBtn = document.getElementById('toggleListBtn');
         const container = document.querySelector('.container');

@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if(source.includes('la10hd.com')) {
                 option.textContent = `Op ${index + 1}.ads`;
             }
-             else {
+            else {
                 option.textContent = `Op ${index + 1}`;
             }
 
@@ -165,6 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Ocultar la lista de canales al hacer clic fuera de la misma
+    document.addEventListener('click', (event) => {
+        if (!videoList.contains(event.target) && !toggleButton.contains(event.target)) {
+            forceHideChannelList();
+        }
+    });
+
     // Función para recargar el iframe
     const reloadButton = document.getElementById('reload-btn');
     reloadButton.addEventListener('click', () => {
@@ -173,3 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
         mainVideo.src = currentSrc; // Recarga el iframe con la misma URL
     });
 });
+
+
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('openModal');
+const closeModalSpan = document.getElementsByClassName('close')[0];
+
+// Abre la modal cuando se hace clic en el botón
+openModalBtn.onclick = function() {
+    modal.style.display = 'block';
+}
+
+// Cierra la modal cuando se hace clic en el elemento <span> (x)
+closeModalSpan.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// Cierra la modal si se hace clic fuera de la ventana modal
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Cierra la modal cuando se presiona la tecla Escape
+document.onkeydown = function(event) {
+    if (event.key === "Escape") {
+        modal.style.display = 'none';
+    }
+}
