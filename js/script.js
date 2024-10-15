@@ -65,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
             else if(source.includes('la10hd.com')) {
                 option.textContent = `Op ${index + 1}.ads`;
             }
+
+        else if(source.includes('nebunexa.co')) {
+            option.textContent = `Op ${index + 1}.ads`;
+        }
             else {
                 option.textContent = `Op ${index + 1}`;
             }
