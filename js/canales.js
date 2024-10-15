@@ -269,7 +269,8 @@ const canales = [
         sources: [
             "https://cv.photocalltv.me/cv2.php?get=VHlDU3BvcnQ&lang=1",
             "https://nebunexa.co/cvatt.php?get=VHlDU3BvcnQ&lang=1",
-            "https://streamtp.live/global1.php?stream=tyc_sports"
+            "https://streamtp.live/global1.php?stream=tyc_sports",
+            "https://star.nebunexa.com/disney/firewatch.php?r=https%3A%2F%2Fanbalancer.express.com.ar%2Flive%2Fc1eds%2FTyC_HD%2FSA_DASH_cipix%2FTyC_HD.mpd%3Fck%3DeyI2M2U2YjBkYjY2NDM0NTU2YTIzYzg1NWJkNWI2ZTdkMiI6IjRjNGYwMjg2NjQ3OTYzYWVjMDVjMTVkZjFiYTUxMjI0In0%3D%26title%3D%26headers%3DeyJvcmlnaW4iOiJodHRwczovL25vd3R2LmV4cHJlc3MuY29tLmFyIiwicmVmZXJlciI6Imh0dHBzOi8vbm93dHYuZXhwcmVzcy5jb20uYXIvIn0%3D"
         ]
     },
     {
