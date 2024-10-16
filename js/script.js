@@ -53,32 +53,26 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateServerSelect(sources) {
         serverSelect.innerHTML = ''; // Limpia las opciones
         currentSources = sources; // Almacena las fuentes actuales
-
+    
         sources.forEach((source, index) => {
             const option = document.createElement('option');
             option.value = index;
-
-            // Verifica si la URL contiene 'streamtp.live' para agregar "(ads)"
-            if (source.includes('streamtp.live')) {
-                option.textContent = `Op ${index + 1}.ads`;
+    
+            // Verifica si la URL contiene 'streamtp.live', 'la10hd.com', o 'nebunexa.co' para agregar "(ads)"
+            if (source.includes('streamtp.live') || source.includes('la10hd.com') || source.includes('nebunexa.co')) {
+                if (source.includes('star.nebunexa.com')) {
+                    option.textContent = `Op ${index + 1}.ext`; // Para star.nebunexa.com, asigna ".ext"
+                } else {
+                    option.textContent = `Op ${index + 1}.ads`; // Para las demás, asigna ".ads"
+                }
+            } else {
+                option.textContent = `Op ${index + 1}`; // Opciones sin anuncios ni extensiones especiales
             }
-            else if(source.includes('la10hd.com')) {
-                option.textContent = `Op ${index + 1}.ads`;
-            }
-
-        else if(source.includes('nebunexa.co')) {
-            option.textContent = `Op ${index + 1}.ads`;
-        }
-        else if(source.includes('star.nebunexa.com')) {
-            option.textContent = `Op ${index + 1}.ext`;
-        }
-            else {
-                option.textContent = `Op ${index + 1}`;
-            }
-
+    
             serverSelect.appendChild(option);
         });
     }
+    
 
     // Cambia la URL del iframe cuando se selecciona un servidor
     serverSelect.addEventListener('change', (event) => {
