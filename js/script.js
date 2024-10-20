@@ -4,11 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector('.main-video .title');
     const container = document.querySelector('.container');
     const videoList = document.querySelector('.video-list');
+    const searchInput = document.getElementById('search'); // Campo de búsqueda
+    const searchContainer = document.getElementById('search-container'); // Contenedor del buscador
     const serverSelect = document.getElementById('server-select'); // Selector de servidor
+    const toggleButton = document.getElementById('toggle-list-btn');
     let currentIndex = 0;
     let channelSelected = false;
     let listVisible = false;
     let currentSources = []; // Fuentes actuales del canal
+    let listVideo = [];
+
+    // Función para filtrar los canales según la búsqueda
+    searchInput.addEventListener('input', function() {
+        const filter = searchInput.value.toLowerCase();
+        listVideo.forEach(video => {
+            const title = video.dataset.title.toLowerCase();
+            if (title.includes(filter)) {
+                video.style.display = ""; // Mostrar el video si coincide
+            } else {
+                video.style.display = "none"; // Ocultar si no coincide
+            }
+        });
+    });
 
     // Crear lista de videos a partir de canales.js
     canales.forEach((canal, index) => {
@@ -25,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videoListContainer.appendChild(videoElement);
     });
 
-    const listVideo = document.querySelectorAll('.video-list .vid');
+    listVideo = document.querySelectorAll('.video-list .vid'); // Actualizar después de crear la lista
 
     // Función para cargar un canal inicial al cargar la página
     function loadInitialChannel() {
@@ -72,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             serverSelect.appendChild(option);
         });
     }
-    
 
     // Cambia la URL del iframe cuando se selecciona un servidor
     serverSelect.addEventListener('change', (event) => {
@@ -88,34 +104,42 @@ document.addEventListener('DOMContentLoaded', () => {
         listVideo[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // Mostrar la lista de canales
-    function showChannelList() {
+    // Mostrar la lista de canales y el buscador
+    function showChannelListAndSearch() {
         container.classList.add('show-list');
         videoList.style.transform = 'translateX(0)';
+        searchContainer.style.display = 'block';
         channelSelected = false;
         listVisible = true;
     }
 
-    // Ocultar la lista de canales
-    function hideChannelList() {
+    // Ocultar la lista de canales y el buscador
+    function hideChannelListAndSearch() {
         container.classList.remove('show-list');
         videoList.style.transform = 'translateX(100%)';
+        searchContainer.style.display = 'none';
         listVisible = false;
     }
 
-    function forceHideChannelList() {
+    function forceHideChannelListAndSearch() {
         if (listVisible) {
-            hideChannelList();
+            hideChannelListAndSearch();
         }
     }
 
-    // Nueva función para el botón que alterna la visibilidad de la lista
-    const toggleButton = document.getElementById('toggle-list-btn');
+    // Nueva función para el botón que alterna la visibilidad de la lista y el buscador
     toggleButton.addEventListener('click', () => {
         if (listVisible) {
-            hideChannelList();
+            hideChannelListAndSearch();
         } else {
-            showChannelList();
+            showChannelListAndSearch();
+        }
+    });
+
+    // Evitar que la lista y el buscador se oculten al hacer clic dentro de ellos
+    document.addEventListener('click', (event) => {
+        if (!videoList.contains(event.target) && !searchContainer.contains(event.target) && !toggleButton.contains(event.target)) {
+            forceHideChannelListAndSearch();
         }
     });
 
@@ -123,13 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (event) => {
         switch (event.key) {
             case 'ArrowRight':
-                showChannelList();
+                showChannelListAndSearch();
                 break;
             case 'ArrowLeft':
-                forceHideChannelList();
+                forceHideChannelListAndSearch();
                 break;
             case 'Escape':
-                forceHideChannelList();
+                forceHideChannelListAndSearch();
                 break;
             case 'ArrowDown':
                 if (listVisible && currentIndex < listVideo.length - 1) {
@@ -147,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (listVisible) {
                     listVideo[currentIndex].click();
                     channelSelected = true;
-                    forceHideChannelList();
+                    forceHideChannelListAndSearch();
                 }
                 break;
             default:
@@ -166,13 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Ocultar la lista de canales al hacer clic fuera de la misma
-    document.addEventListener('click', (event) => {
-        if (!videoList.contains(event.target) && !toggleButton.contains(event.target)) {
-            forceHideChannelList();
-        }
-    });
-
     // Función para recargar el iframe
     const reloadButton = document.getElementById('reload-btn');
     reloadButton.addEventListener('click', () => {
@@ -182,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// Código para manejar la modal
 const modal = document.getElementById('modal');
 const openModalBtn = document.getElementById('openModal');
 const closeModalSpan = document.getElementsByClassName('close')[0];

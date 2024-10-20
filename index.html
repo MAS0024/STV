@@ -15,21 +15,23 @@
             <i class="bi bi-view-list"></i>
         </button>
         
+        <div class="search-container" id="search-container">
+            <input type="text" id="search" placeholder="Buscar canal..." class="search-bar">
+        </div>
+        
         <div class="main-video">
-            
             <div class="video">
-               
-                <iframe id="reproductor" allowfullscreen>
-                        </iframe>   
-                        <button id="reload-btn">
-                            <i class="fas fa-redo"></i>
-                        </button>
+                <iframe id="reproductor" allowfullscreen></iframe>   
+                <button id="reload-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
                 <h3 class="title">Selecciona el canal:</h3> 
                 <select id="server-select" class="server-select"></select>
             </div>
-        </div>       
-        <div class="video-list" id="video-list"> 
-            <!--<input type="text" id="search" placeholder="Buscar canal..." class="search-bar">-->
+        </div>
+    
+        <div class="video-list" id="video-list">
+            <!-- Aquí se generarán los canales -->
         </div>
     </div>
 
